@@ -38,7 +38,7 @@ Header.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  loggedIn: !!state.token, 
+  loggedIn: !!state.spotify_id, 
 });
 
 const mapDispatchToProps = dispatch => ({
