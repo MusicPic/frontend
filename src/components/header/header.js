@@ -32,3 +32,17 @@ class Header extends React.Component {
     );
   }
 }
+Header.propTypes = {
+  loggedIn: PropTypes.bool,
+  doLogout: PropTypes.func,
+};
+
+const mapStateToProps = state => ({
+  loggedIn: !!state.token, 
+});
+
+const mapDispatchToProps = dispatch => ({
+  doLogout: () => dispatch(authActions.logout()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
