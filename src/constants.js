@@ -1,0 +1,1 @@
+export const TOKEN_COOKIE_KEY = 'musicpic_token'; // eslint-disable-line

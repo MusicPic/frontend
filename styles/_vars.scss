@@ -1,0 +1,56 @@
+$background-color: #949090;
+$font-color: rgb(63, 17, 72); 
+$error: #ff0000;
+$modal-color: rgba(0,0,0,0.4);
+$modal-background: #FFF;
+$button-margin: 15px;
+$lime-color:rgb(224, 230, 135);
+
+html, body {
+  background: $background-color;
+}
+
+p,h1,h2,ul {
+  color: $font-color;
+  margin-left:90px;  
+}
+.landing {
+  margin-top: 70px;
+  padding-left: 20px;
+
+}
+
+a {
+  text-decoration: none;
+  background-color: $lime-color;
+  margin:5px;
+  padding:5px;
+  width: 155px;
+  border-radius:3px;
+  text-align: center;
+}
+
+li {
+  background-color: $lime-color;
+  margin:5px;
+  padding:5px;
+  width: 155px;
+  border-radius:3px;
+  text-align: center;
+}
+ul{
+  padding-left: 0;
+  list-style-type: none; 
+}
+a .loginLink {
+  margin-left: 50px;
+}
+input {
+  margin-left: 73px;
+}
+button {
+  background-color:rgb(223, 149, 202);
+  padding: 5px;
+  border-radius: 3px;
+  margin: $button-margin;
+}
