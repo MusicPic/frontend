@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import '../../../styles/main.scss';
+import Profile from '../profile/profile';
 import Dashboard from '../dashboard/dashboard';
 import Header from '../header/header';
 import * as profileActions from '../../actions/profile-action';
@@ -22,7 +23,7 @@ class App extends React.Component {
       <div>
           <Header />
           <Route exact path='/dashboard' component={ Dashboard }/>
-          {/* <Route exact path='/me' component={ Profile } /> */}
+          <Route exact path='/me' component={ Profile } />
         </div>
       </BrowserRouter>       
       </div>
