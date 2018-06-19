@@ -1,9 +1,8 @@
-import { validatePicture } from '../utils/utils';
 
 const D23_001 = 'Picture is required';
 // const D23_002 = 'Invalid picture';
 
-validatePicture = (picture) => {
+const validatePicture = (picture) => {
   if (!picture) {
     throw new Error(D23_001); 
   }
