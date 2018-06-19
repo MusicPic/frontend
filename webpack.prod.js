@@ -2,7 +2,7 @@ const merge = require('webpack-merge');
 const commonConfiguration = require('./webpack.common');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackExcludeEmpyAssetsPlugins = require('html-webpack-exclude-empty-assets-plugin');
+const HtmlWebpackExcludeEmptyAssetsPlugins = require('html-webpack-exclude-empty-assets-plugin');
 
 module.exports = merge(commonConfiguration, {
   mode: 'production',
@@ -11,7 +11,7 @@ module.exports = merge(commonConfiguration, {
     new MiniCSSExtractPlugin({
       filename: 'style.[hash].css',
     }),
-    new HtmlWebpackExcludeEmpyAssetsPlugins(),
+    new HtmlWebpackExcludeEmptyAssetsPlugins(),
   ],
   module: {
     rules: [

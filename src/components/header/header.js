@@ -11,7 +11,7 @@ class Header extends React.Component {
     const JSXNotLoggedIn = 
     <ul>
       <li><Link to={routes.ROOT_ROUTE}>Home</Link></li>
-      <li><Link to={routes.OAUTH_ROUTE}>Connect with Spotify</Link></li>
+      <li><a href={routes.SPOTIFY_ROUTE}>Connect with Spotify</a></li>
     </ul>;
     const JSXLoggedIn = 
     <ul>

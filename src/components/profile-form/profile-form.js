@@ -35,7 +35,7 @@ class ProfileForm extends React.Component {
 
         <textarea
           name='username'
-          // placeholder={this.state.props}
+          placeholder='username'
           value={this.state.username}
           onChange={this.handleChange}
         />
