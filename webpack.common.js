@@ -20,7 +20,7 @@ webpackConfig.output = {
 
 webpackConfig.plugins = [
   new HtmlWebpackPlugin({
-    title: 'Lab 37',
+    title: 'Music Pic',
   }),
   new DefinePlugin({
     API_URL: JSON.stringify(process.env.API_URL),
@@ -32,9 +32,10 @@ if (production) {
     filename: '[name].[hash].css',
   }));
 }
-
 webpackConfig.module = {};
+
 const finalLoader = production ? MiniCssPlugin.loader : 'style-loader';
+
 webpackConfig.module.rules = [
   {
     test: /\.(png|svg|jpg|gif)$/,
@@ -53,15 +54,5 @@ webpackConfig.module.rules = [
         cacheDirectory: true,
       },
     },
-  },
-  {
-    test: /\.scss$/,
-    use: [
-      // MiniCssPlugin.loader, // for production 
-      'style-loader', 
-      'css-loader',
-      'sass-loader',
-    ],
- 
   },
 ];

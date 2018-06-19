@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "watch": "webpack-dev-server --config webpack.dev.js",
-    "test": "jest"
+    "pack": "webpack --config webpack.prod.js",
+    "heroku-postbuild": "webpack --progress --config webpack.prod.js",
+    "test": "jest --coverage"
   },
   "jest": {
     "moduleNameMapper": {
@@ -49,6 +52,11 @@
     "webpack-dev-server": "^3.1.4",
     "webpack-merge": "^4.1.2",
     "superagent": "^3.8.3"
+  },
+  "dependencies": {
+    "clean-webpack-plugin": "^0.1.19",
+    "express": "^4.16.3",
+    "html-webpack-exclude-empty-assets-plugin": "^0.1.1"
   },
   "keywords": [],
   "author": "",
