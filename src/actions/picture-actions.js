@@ -1,4 +1,5 @@
 import superagent from 'superagent';
+import * as routes from '../routes';
 
 const picturesFetch = pictures => ({ 
   type: 'PICTURE_FETCH', 
@@ -28,12 +29,12 @@ const picturesFetchRequest = () => (dispatch) => {
     }); 
 };
 
-const pictureCreateRequest = picture => (dispatch) => {
-  return superagent.post(`${API_URL}/api/picture`)
-    .send(picture)
+const pictureCreateRequest = fileDescriptor => (store) => {
+  // const { token } = store.getState();
+  return superagent.post(`${API_URL}${routes.PICTURE_ROUTE}`)
+    .attach('picture', fileDescriptor.picture)
     .then((response) => {
-      dispatch(pictureCreate(response.body));
-      return response;
+      return store.dispatch(pictureCreate(response.body));
     });
 };
 

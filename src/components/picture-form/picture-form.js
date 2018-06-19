@@ -11,6 +11,7 @@ const fileToBase64String = (file) => {
     
     fileReader.addEventListener('load', () => resolve(fileReader.result));
     fileReader.addEventListener('error', reject);
+    return fileReader.readAsDataURL(file);
   });
 };
 
@@ -25,7 +26,6 @@ class PictureForm extends React.Component {
     autoBind.call(this, PictureForm);
   }
   
-  // member funcs----------
   handleChange(event) {
     const { type, value, files } = event.target; 
     if (type === 'file') {
@@ -35,7 +35,7 @@ class PictureForm extends React.Component {
       this.setState({
         picture: files[0],
       }, () => {
-        console.log('i will fire only after the state changes');
+        console.log('it will show only after the state changes');
       });
     } else {
       this.setState({
@@ -50,8 +50,6 @@ class PictureForm extends React.Component {
     this.setState(this.emptyState);
   }
 
-
-  // life cycle hooks------------
   render() {
     return (
       <form 
@@ -65,7 +63,7 @@ class PictureForm extends React.Component {
         name='photo'
         onChange={this.handleChange}
       />
-      <button type='submit'>Upload a Pic | Create a Playlist</button>
+      <button type='submit'> Upload a Pic | Create a Playlist</button>
       </form>
     );
   }
