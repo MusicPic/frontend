@@ -1,14 +1,10 @@
 import superagent from 'superagent';
 import * as routes from '../routes';
 
-// sync actions 
-
 const setPicture = picture => ({
   type: 'PICTURE_SET',
   payload: picture,
 });
-
-//async 
 
 const requestPicture = picture => (store) => {
   // this route will make a request to the face api and return keywords
