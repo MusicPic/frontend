@@ -1,10 +1,11 @@
 
+
 export default (state = null, action) => {
   const { type, payload } = action;
   
   switch (type) {
     case 'PROFILE_FETCH':
-    
+
       return payload;
     case 'PROFILE_SET':
     
@@ -15,6 +16,7 @@ export default (state = null, action) => {
 
     case 'PROFILE_DELETE':
   
+
       return state.filter(item => item._id !== payload._id);
     case 'TOKEN_REMOVE': 
       return null; 
