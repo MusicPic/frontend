@@ -1,1 +1,1 @@
-export const TOKEN_COOKIE_KEY = 'musicpic_token'; // eslint-disable-line
+export const TOKEN_COOKIE_KEY = 'TOKEN_COOKIE_KEY'; // eslint-disable-line

@@ -1,8 +1,7 @@
 export const ROOT_ROUTE = '/';
-export const DASHBOARD_ROUTE = 'profile/me';
+export const DASHBOARD_ROUTE = 'dashboard';
 export const OAUTH_ROUTE = '/oauth/spotify';
-export const LOGOUT_ROUTE = '/logout';
-export const PROFILE_ROUTE = '/profile';
+export const PROFILE_ROUTE = '/profile/me';
 export const PICTURE_ROUTE = '/picture';
 export const PLAYLIST_ROUTE = '/playlist';
 export const LOGIN_ROUTE = '/login';

@@ -22,8 +22,10 @@ const picturesFetchRequest = () => (dispatch) => {
 
 const pictureCreateRequest = fileDescriptor => (store) => {
   const { token } = store.getState();
+  const parsedToken = JSON.parse(token);
+  console.log('TOKEN', parsedToken);
   return superagent.post(`${API_URL}${routes.PICTURE_ROUTE}`)
-    .set('Authorization', `Bearer ${token}`)
+    .set('Authorization', `Bearer ${parsedToken}`)
     .attach('picture', fileDescriptor.picture)
     .then((response) => {
       return store.dispatch(pictureCreate(response.body));
