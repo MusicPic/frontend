@@ -15,16 +15,16 @@ class Dashboard extends React.Component {
     }
   }
   render() {
-    // const {
-    //   profile, profileCreate, pictures, pictureCreate, pictureUpdate, pictureDelete,
-    // } = this.props;
+    const {
+      profile, profileCreate, pictures, pictureCreate, pictureUpdate, pictureDelete,
+    } = this.props;
     return (
       <div className='dashboard'>
       <h2> Dashboard </h2>
-      {/* <Profile profile={profile}/>
+      <Profile profile={profile}/>
       <PictureForm 
       onComplete={pictureCreate}
-      buttonText='Create picture'/> */}
+      buttonText='Create picture'/>
       </div>
     );
   }
@@ -43,7 +43,7 @@ Dashboard.propTypes = {
 const mapStateToProps = (state) => {
   return {
     pictures: state.pictures,
-    profile: state.profile,
+    // profile: state.profile,
   };
 };
 

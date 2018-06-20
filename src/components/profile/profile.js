@@ -62,8 +62,8 @@ class Profile extends React.Component {
     // }
     return (
       <div>
-        <p>{profile.username}</p>
-        <p>{profile.avatar}</p>
+        <p>joanna{this.props.username}</p>
+        <p>joanna{this.props.avatar}</p>
       </div>
     );
   }
