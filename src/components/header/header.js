@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import * as authActions from '../../actions/auth-action';
 
 
 import * as routes from '../../routes';
@@ -15,8 +16,7 @@ class Header extends React.Component {
     </ul>;
     const JSXLoggedIn = 
     <ul>
-      <li><Link to={routes.ROOT_ROUTE}>Music Pic</Link></li>
-      <li><Link to={routes.LOGOUT_ROUTE}>Logout</Link></li>
+      <li><Link to={routes.DASHBOARD_ROUTE}>Music Pic</Link></li>
     </ul>;
 
     return (
@@ -38,7 +38,7 @@ Header.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  loggedIn: !!state.spotify_id, 
+  loggedIn: !!state.token, 
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -19,11 +19,7 @@ export const logout = () => {
 };
 
 
-export const loginRequest = user => (store) => {
-  return superagent.get(`${API_URL}${routes.LOGIN_ROUTE}`)
-    .auth(user.username, user.password)
-    .withCredentials()
-    .then((response) => {
-      return store.dispatch(setTokenAction(response.text));
-    }); 
-};
+// export const login = () => (store) => {
+//   console.log('DO WE GET HERE');
+//   return store.dispatch(setTokenAction(response.text));
+// };
