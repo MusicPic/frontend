@@ -9,12 +9,12 @@ import Header from '../header/header';
 import * as profileActions from '../../actions/profile-action';
 
 class App extends React.Component {
-  componentDidMount() {
-    if (this.props.loggedIn) {
-      this.props.pFetchProfile()
-        .catch(console.error);
-    }
-  }
+  // componentDidMount() {
+  //   if (this.props.loggedIn) {
+  //     this.props.pFetchProfile()
+  //       .catch(console.error);
+  //   }
+  // }
   render() {
     return (
       <div className="app">
@@ -23,7 +23,7 @@ class App extends React.Component {
       <div>
           <Header />
           <Route exact path='/dashboard' component={ Dashboard }/>
-          <Route exact path='/me' component={ Profile } />
+          {/* <Route exact path='/me' component={ Profile } /> */}
         </div>
       </BrowserRouter>       
       </div>
@@ -33,14 +33,13 @@ class App extends React.Component {
 
 App.propTypes = {
   loggedIn: PropTypes.bool,
-  pFetchProfile: PropTypes.func,
 };
 const mapStateToProps = state => ({
-  loggedIn: !!state.spotify_id,
+  loggedIn: !!state.token,
 
 });
 const mapDispatchToProps = dispatch => ({
-  pFetchProfile: () => dispatch(profileActions.fetchRequest()),
+ 
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

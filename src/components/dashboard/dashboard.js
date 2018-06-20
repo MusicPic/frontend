@@ -3,9 +3,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import PictureForm from './../picture-form/picture-form';
+import Profile from './../profile/profile';
 import * as pictureActions from '../../actions/picture-actions';
 import * as profileActions from '../../actions/profile-action';
-
 
 class Dashboard extends React.Component {
   componentDidMount() {
@@ -14,18 +14,17 @@ class Dashboard extends React.Component {
         .catch(console.error);
     }
   }
-
   render() {
     const {
-      pictures, pictureCreate, pictureUpdate, pictureDelete,
+      profile, profileCreate, pictures, pictureCreate, pictureUpdate, pictureDelete, loggedIn,
     } = this.props;
     return (
       <div className='dashboard'>
-      <h2>Picture loading </h2>
+      <h2> Dashboard </h2>
+      <Profile profile={profile}/>
       <PictureForm 
       onComplete={pictureCreate}
       buttonText='Create picture'/>
-      
       </div>
     );
   }
@@ -39,12 +38,14 @@ Dashboard.propTypes = {
   pictureDelete: PropTypes.func,
   pictures: PropTypes.array,
   profile: PropTypes.object,
+  loggedIn: PropTypes.bool,
 };
 
 const mapStateToProps = (state) => {
   return {
     pictures: state.pictures,
     profile: state.profile,
+    loggedIn: !!state.token,
   };
 };
 
@@ -57,3 +58,23 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
+
+// const {
+//   profileCreate, pictures, pictureCreate, pictureUpdate, pictureDelete,
+// } = this.props;
+
+// const onProfile = 
+//   <div>
+//     <ProfileForm 
+//         onComplete={profileCreate}
+//         buttonText='Create picture'/>
+//   </div>;
+
+// const onPicture =
+//   <div className='picture-loading'>
+//     <h2>Picture loading </h2>
+//     {/* <Profile/> */}
+//     <PictureForm 
+//       onComplete={pictureCreate}
+//       buttonText='Create picture'/>
+//   </div>;
