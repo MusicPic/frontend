@@ -8,7 +8,6 @@ import * as pictureActions from '../../actions/picture-actions';
 
 
 class Dashboard extends React.Component {
- 
   render() {
     const {
       pictures, pictureCreate, pictureUpdate, pictureDelete,

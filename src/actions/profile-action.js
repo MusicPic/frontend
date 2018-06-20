@@ -36,13 +36,11 @@ const fetchRequest = () => (store) => {
   return superagent.get(`${API_URL}/profile/me`)
     .set('Authorization', `Bearer ${token}`) 
     .then((response) => {
-      // console.log(response.body);
       return store.dispatch(fetchProfile(response.body));
     });
 };
 
 const updateProfileRequest = profile => (store) => {
-  // const { token } = store.getState(); 
   const token = localStorage.getItem('token');
   return superagent.put(`${API_URL}${routes.PROFILE_ROUTE}/${profile._id}`)
     .set('Authorization', `Bearer ${token}`) 
