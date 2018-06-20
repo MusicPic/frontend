@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import token from './token';
-import pictures from './picture-reducer';
+import picture from './picture-reducer';
+import profile from './profile-reducer';
 
 
-export default combineReducers({ token, pictures });
+export default combineReducers({ token, picture, profile });

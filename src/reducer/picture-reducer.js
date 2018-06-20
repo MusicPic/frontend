@@ -1,17 +1,12 @@
 
 const D23_001 = 'Picture is required';
-// const D23_002 = 'Invalid picture';
+
 
 const validatePicture = (picture) => {
   if (!picture) {
     throw new Error(D23_001); 
   }
-  // const { 
-  //   picture, placement, 
-  // } = picture;
-  // if (!commonName || !placement) {
-  //   throw new Error(D23_002);
-  // }
+  
   return undefined;
 };
 
