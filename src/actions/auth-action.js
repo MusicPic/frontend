@@ -18,19 +18,6 @@ export const logout = () => {
   return removeTokenAction();
 };
 
-// export const signupRequest = user => (store) => {
-//   return superagent.post(`${API_URL}${routes.SIGNUP_ROUTE}`)
-//     .send(user)
-//     .withCredentials()
-//     .then((response) => {
-//       store.dispatch(setTokenAction(response.text));
-//       try {
-//         localStorage.setItem('token', response.text);
-//       } catch (error) {
-//         console.log(error);
-//       } 
-//     });
-// };
 
 export const loginRequest = user => (store) => {
   return superagent.get(`${API_URL}${routes.LOGIN_ROUTE}`)
