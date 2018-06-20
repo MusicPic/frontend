@@ -21,6 +21,7 @@ class PictureForm extends React.Component {
     this.emptyState = {
       preview: undefined, 
       picture: '', 
+      url: '',
     };
     this.state = this.emptyState;
     autoBind.call(this, PictureForm);
@@ -37,11 +38,13 @@ class PictureForm extends React.Component {
       });
     } else {
       this.setState({
-        description: value,
+        url: value,
       });
     }
   }
-
+  // here we are passing our local ui state to the oncomplete function which will call our picture-action
+  // this.state = preview and picture
+  // picture should be files[0]
   handleSubmit(event) {
     event.preventDefault();
     this.props.onComplete(this.state);
@@ -58,7 +61,12 @@ class PictureForm extends React.Component {
       <label>Picture</label>
       <input 
         type='file'
-        name='photo'
+        name='picture'
+        onChange={this.handleChange}
+      />
+          <input 
+        type='text'
+        name='url'
         onChange={this.handleChange}
       />
       <button type='submit'> Upload a Pic | Create a Playlist</button>

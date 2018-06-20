@@ -19,17 +19,22 @@ const picturesFetchRequest = () => (dispatch) => {
       return response; 
     }); 
 };
-
+// we pass in the state obj from picture form, it has a property picture is a jpg, preview is the base64String
 const pictureCreateRequest = fileDescriptor => (store) => {
   const { token } = store.getState();
-  const parsedToken = JSON.parse(token);
-  console.log('TOKEN', parsedToken);
+  // const parsedToken = JSON.parse(token);
+  console.log('TOKEN', token);
+  console.log('PICTURE OBJECT', fileDescriptor);
   return superagent.post(`${API_URL}${routes.PICTURE_ROUTE}`)
-    .set('Authorization', `Bearer ${parsedToken}`)
-    .attach('picture', fileDescriptor.picture)
+    .set('Authorization', `Bearer ${token}`)
+    .send({ url: fileDescriptor.url })
     .then((response) => {
       return store.dispatch(pictureCreate(response.body));
     });
 };
 
 export { picturesFetchRequest, pictureCreateRequest };
+
+//.field('description', fileDescriptor.picture.name)
+// .attach('picture', fileDescriptor.picture)
+//  .attach('thePicture', fileDescriptor.picture)
