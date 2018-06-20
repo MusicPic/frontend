@@ -6,7 +6,7 @@ const validatePicture = (picture) => {
   if (!picture) {
     throw new Error(D23_001); 
   }
-  
+
   return undefined;
 };
 
