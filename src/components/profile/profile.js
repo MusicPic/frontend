@@ -23,7 +23,6 @@ class Profile extends React.Component {
     this.props.profileCreate(profile)
       .then(() => {
         this.props.history.push(routes.DASHBOARD_ROUTE);
-        // add .catch
       });
   }
 

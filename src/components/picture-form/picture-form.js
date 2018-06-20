@@ -29,13 +29,11 @@ class PictureForm extends React.Component {
   handleChange(event) {
     const { type, value, files } = event.target; 
     if (type === 'file') {
-      // this is async
       fileToBase64String(files[0])
         .then(result => this.setState({ preview: result })); 
       this.setState({
         picture: files[0],
       }, () => {
-        console.log('it will show only after the state changes');
       });
     } else {
       this.setState({

@@ -1,7 +1,3 @@
-/**
- * toggle between image upload form
- * and if uploaded showing the playlist edit and the profile
- */
 
 import React from 'react';
 import { connect } from 'react-redux';
@@ -11,9 +7,6 @@ import * as pictureActions from '../../actions/picture-actions';
 
 
 class Dashboard extends React.Component {
-  // componentDidMount() {
-  //   this.props.pictureFetch();
-  // }
   render() {
     const {
       pictures, pictureCreate, pictureUpdate, pictureDelete,
@@ -24,21 +17,7 @@ class Dashboard extends React.Component {
       <PictureForm 
       onComplete={pictureCreate}
       buttonText='Create picture'/>
-      {/* {
-        pictures.map((picture) => {
-          return (
-            <div key={picture._id}>
-            <h3>{picture.firstName}</h3>
-            
-            <PictureForm 
-              parcel={picture}
-              onComplete={pictureUpdate}
-              buttonText='Update parcel'/>
-            <button onClick={() => pictureDelete(picture)}>delete</button>
-            </div>
-          );
-        })
-      } */}
+      
       </div>
     );
   }
