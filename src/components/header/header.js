@@ -9,12 +9,7 @@ import * as routes from '../../routes';
 // import AppBar from ‘material-ui/AppBar’;
 
 class Header extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     showProfile: false;
-  //   }
-  // }
+  
   render() {
     const JSXNotLoggedIn = 
     <ul>
@@ -24,7 +19,7 @@ class Header extends React.Component {
     const JSXLoggedIn = 
     <ul>
       <li><Link to={routes.ROOT_ROUTE}>Home</Link></li>
-      {/* <li onClick={() => this.setState({showProfile: true})}>Profile</li> */}
+      <li><Link to={routes.ROOT_ROUTE}>Profile</Link></li>
       <li><Link to={routes.PICTURE_ROUTE}>Upload Picture</Link></li>
     </ul>;
 
