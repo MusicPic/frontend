@@ -1,8 +1,62 @@
+// --------------------------------------------------------------------------------------
+// COLORS
+// --------------------------------------------------------------------------------------
 @import 'vars';
-
+// notice not using underscore or extension sass knows how to find
+html, body{
+  height:100%;
+}
 body {
   background: $background-color;
-  font-family: sans-serif;
+  font-family: $font;
   color: $font-color;
+  height: 90%;
+  background-image: url("https://s3.amazonaws.com/sarasaurus/456e86a06189d602249922324cf7ec41.30688874_2058808840814013_4208000242685050880_n.jpg");
 }
+a {
+  font-size: $header-font;
+  color: $font-color;
+  text-decoration: none;
+  background-color: aqua;
+
+}
+a:hover {
+  text-decoration: underline;
+}
+.error {
+  border: 1px solid $error;
+}
+header, main, footer, article, section, div, p, ul, h1 {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: inline-block;
+  background-color: red;
+  }
+li {
+  display: inline-block;
+  width: 30%;
+  margin-right: 0px;
+  margin-left: 70%;
+}
+p {
+background: $loud;
+font-size: $p-font;
+}
+
+h1 {
+  font-size: $header-font;
+  background-color: yellow;
+}
+h3 {
+  padding: 0;
+  margin: 0;
+}
+
+// form {
+//   width: 44%;
+//   background-color: orange;
+// }
+
 

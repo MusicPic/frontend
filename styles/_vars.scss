@@ -1,56 +1,29 @@
-$background-color: #949090;
-$font-color: rgb(63, 17, 72); 
-$error: #ff0000;
+// --------------------------------------------------------------------------------------
+// COLORS
+// --------------------------------------------------------------------------------------
+
+$background-color: purple;
+$primary-color: rgb(85, 86, 136);
+$secondary-color: rgb(158, 158, 0); 
+$font-color: rgba(0,0,0,0.8);
+$font: arial sans-serif;
 $modal-color: rgba(0,0,0,0.4);
 $modal-background: #FFF;
-$button-margin: 15px;
-$lime-color:rgb(224, 230, 135);
+$error: red;
+$spacing: 5vw;
+$spacing-sm: $spacing / 2;
+$radius: .5vw;
+$loud: #00ffff;
+$quiet: #ff0fff;
+$medium: #ffff00;
+$p-font: 2vw;
+$header-font: 4vw;
+$button-font: 1.5vw;
+$button-padding: 1vw 3vw;
+$input-padding: 1vw 2vw;
 
-html, body {
-  background: $background-color;
-}
+// --------------------------------------------------------------------------------------
+// SIZE
+// --------------------------------------------------------------------------------------
 
-p,h1,h2,ul {
-  color: $font-color;
-  margin-left:90px;  
-}
-.landing {
-  margin-top: 70px;
-  padding-left: 20px;
 
-}
-
-a {
-  text-decoration: none;
-  background-color: $lime-color;
-  margin:5px;
-  padding:5px;
-  width: 155px;
-  border-radius:3px;
-  text-align: center;
-}
-
-li {
-  background-color: $lime-color;
-  margin:5px;
-  padding:5px;
-  width: 155px;
-  border-radius:3px;
-  text-align: center;
-}
-ul{
-  padding-left: 0;
-  list-style-type: none; 
-}
-a .loginLink {
-  margin-left: 50px;
-}
-input {
-  margin-left: 73px;
-}
-button {
-  background-color:rgb(223, 149, 202);
-  padding: 5px;
-  border-radius: 3px;
-  margin: $button-margin;
-}

@@ -1,6 +1,61 @@
 @import 'normalize';
 @import 'base';
 
+.app {
+  display: block;
+  max-width: 90%;
+  margin: 0 auto;
+  
+  div {
+    background-color: aqua;
+  }
+  header {
+    width: 90%;
+  h1 {
+    background-color: yellow;
+    width: 70%;
+    float: left;
+  }
+  ul {
+    width: 20%;
+    float: right;
+  }
+  a {
+    background-color: fuchsia;
+  }
+  }
+  }
+.dashboard{
+  width: 90%;
+  //margin: 0 auto;
+  padding: $spacing-sm $spacing-sm;
+  background-color: lime;
+  margin: $spacing auto;
 
+  p {
+    margin: 0 auto;
+    display: block;
+    width: 94%;
+    background: aqua;
+  }
+.create-park {
+  padding-bottom: $spacing;
+  background-color: $primary-color;
 
-
+  }
+ .park-item {
+   width: 100%;
+   margin: 0 auto;
+   background-color: $secondary-color;
+   display: block;
+   //padding: $spacing-sm $spacing-sm;
+ }
+ form {
+   background-color: pink;
+   width: 100%;
+   margin: 0 auto;
+ }
+  input {
+    margin: $spacing-sm /2;
+  }
+}
