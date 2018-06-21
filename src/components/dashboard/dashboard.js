@@ -62,22 +62,3 @@ const mapDispatchToProps = dispatch => ({
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
 
-// const {
-//   profileCreate, pictures, pictureCreate, pictureUpdate, pictureDelete,
-// } = this.props;
-
-// const onProfile = 
-//   <div>
-//     <ProfileForm 
-//         onComplete={profileCreate}
-//         buttonText='Create picture'/>
-//   </div>;
-
-// const onPicture =
-//   <div className='picture-loading'>
-//     <h2>Picture loading </h2>
-//     {/* <Profile/> */}
-//     <PictureForm 
-//       onComplete={pictureCreate}
-//       buttonText='Create picture'/>
-//   </div>;

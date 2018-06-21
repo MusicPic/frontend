@@ -64,7 +64,7 @@ class Profile extends React.Component {
     return (
       <div>
         <p>{this.props.username ? this.props.profile.username : 'Spotify user'}</p>
-        {/* <p>{this.props.profile ? this.props.profile.account : null}</p> */}
+        
       </div>
     );
   }
@@ -73,18 +73,8 @@ class Profile extends React.Component {
 Profile.propTypes = {
   profileFetch: PropTypes.object,
   profile: PropTypes.object,
-  // profileUpdate: PropTypes.func,
-  // profileCreate: PropTypes.func,
   history: PropTypes.object, 
 };
 
-// const mapStateToProps = state => ({
-//   //profile: state.profile,
-// });
 
-// const mapDispatchToProps = dispatch => ({
-//   profileCreate: profile => dispatch(profileActions.requestProfile(profile)),
-//   profileUpdate: profile => dispatch(profileActions.updateRequest(profile)), 
-// });
-
-export default (Profile);
+export default Profile;

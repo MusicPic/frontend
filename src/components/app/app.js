@@ -17,7 +17,7 @@ class App extends React.Component {
       <div>
           <Header />
           <Route exact path='/dashboard' component={ Dashboard }/>
-          {/* <Route exact path='/me' component={ Profile } /> */}
+         
         </div>
       </BrowserRouter>       
       </div>
@@ -25,15 +25,5 @@ class App extends React.Component {
   }
 }
 
-App.propTypes = {
-  loggedIn: PropTypes.bool,
-};
-const mapStateToProps = state => ({
-  loggedIn: !!state.token,
 
-});
-const mapDispatchToProps = dispatch => ({
- 
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;
