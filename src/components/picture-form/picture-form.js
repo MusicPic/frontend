@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import autoBind from '../../utils/utils';
+import * as pictureActions from '../../actions/picture-actions';
 
 const fileToBase64String = (file) => {
   return new Promise((resolve, reject) => {
@@ -45,9 +47,11 @@ class PictureForm extends React.Component {
   // here we are passing our local ui state to the oncomplete function which will call our picture-action
   // this.state = preview and picture
   // picture should be files[0]
+  
   handleSubmit(event) {
     event.preventDefault();
     this.props.onComplete(this.state);
+    console.log('STATE IN PICTURE FORM', this.state);
     this.setState(this.emptyState);
   }
 
@@ -74,9 +78,13 @@ class PictureForm extends React.Component {
     );
   }
 }
-
+// Picture form onComplete passed in in Dashboard
 PictureForm.propTypes = {
   onComplete: PropTypes.func,
   profile: PropTypes.object,
 };
-export default PictureForm;
+const mapDispatchToProps = dispatch => ({
+  pictureCreate: picture => dispatch(pictureActions.pictureCreateRequest(picture)),
+});
+
+export default connect(null, mapDispatchToProps)(PictureForm);

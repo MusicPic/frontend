@@ -32,7 +32,7 @@ Dashboard.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
-    parcels: state.pictures,
+    pictures: state.pictures,
   };
 };
 

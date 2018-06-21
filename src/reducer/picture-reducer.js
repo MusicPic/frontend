@@ -15,6 +15,7 @@ export default (state = [], action) => {
 
   switch (type) {
     case 'PICTURE_CREATE':
+      console.log('INSIDE PICTURE CREATE', payload);
       validatePicture(payload);
       return [...state, payload];
     case 'TOKEN_REMOVE':
