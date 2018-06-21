@@ -8,6 +8,7 @@ import Dashboard from '../dashboard/dashboard';
 import Header from '../header/header';
 import * as profileActions from '../../actions/profile-action';
 
+
 class App extends React.Component {
   render() {
     return (

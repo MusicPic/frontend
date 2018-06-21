@@ -1,5 +1,6 @@
-$background-color: #949090;
-$font-color: rgb(63, 17, 72); 
+// $background-color: #949090;
+// $backgroundimage: url("../assets/background.jpeg");
+$font-color:green; 
 $error: #ff0000;
 $modal-color: rgba(0,0,0,0.4);
 $modal-background: #FFF;
@@ -7,7 +8,7 @@ $button-margin: 15px;
 $lime-color:rgb(224, 230, 135);
 
 html, body {
-  background: $background-color;
+  // background-image: $backgroundimage;
 }
 
 p,h1,h2,ul {
