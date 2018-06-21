@@ -11,11 +11,12 @@ class Header extends React.Component {
   render() {
     const JSXNotLoggedIn = 
     <ul>
-      <li><Link to={routes.ROOT_ROUTE}>Home</Link></li>
+      
       <li><a href={routes.SPOTIFY_ROUTE}>Connect with Spotify</a></li>
     </ul>;
     const JSXLoggedIn = 
     <ul>
+      <li><Link to={routes.ROOT_ROUTE}>Home</Link></li>
       <li><Link to={routes.PROFILE_ROUTE}>Profile</Link></li>
       <li><Link to={routes.PICTURE_ROUTE}>Upload Picture</Link></li>
     </ul>;
@@ -28,7 +29,7 @@ class Header extends React.Component {
     }
   </nav>
     {this.props.loggedIn ? 
-    <button className='logout' onClick={this.props.doLogout}>Logout</button> : undefined}
+    <button className='logout' onClick={this.props.doLogout}><a href='/'>Logout</a> </button> : undefined}
   </header>
     );
   }

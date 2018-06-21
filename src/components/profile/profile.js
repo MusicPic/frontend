@@ -19,22 +19,23 @@ class Profile extends React.Component {
     autoBind.call(this, Profile);
   }
 
-  handleCreate(profile) {
-    this.props.profileCreate(profile)
-      .then(() => {
-        this.props.history.push(routes.DASHBOARD_ROUTE);
-      });
-  }
+  // handleCreate(profile) {
+  //   this.props.profileCreate(profile)
+  //     .then(() => {
+  //       this.props.history.push(routes.DASHBOARD_ROUTE);
+  //     });
+  // }
 
-  handleUpdate(profile) {
-    this.props.profileUpdate(profile);
-    this.setState({ editing: false });
-  }
+  // handleUpdate(profile) {
+  //   this.props.profileUpdate(profile);
+  //   this.setState({ editing: false });
+  // }
   
   render() {
-    const {
-      profile,
-    } = this.props;
+    console.log('profile props', this.props.profile);
+    // const {
+    //   profile,
+    // } = this.props;
 
     // let JSXEditing = null;
     // let JSXDisplay = null;
@@ -62,8 +63,8 @@ class Profile extends React.Component {
     // }
     return (
       <div>
-        <p>{this.props.username}</p>
-        <p>{this.props.avatar}</p>
+        <p>{this.props.username ? this.props.profile.username : 'Spotify user'}</p>
+        {/* <p>{this.props.profile ? this.props.profile.account : null}</p> */}
       </div>
     );
   }
@@ -77,13 +78,13 @@ Profile.propTypes = {
   history: PropTypes.object, 
 };
 
-const mapStateToProps = state => ({
-  profile: state.profile,
-});
+// const mapStateToProps = state => ({
+//   //profile: state.profile,
+// });
 
 // const mapDispatchToProps = dispatch => ({
 //   profileCreate: profile => dispatch(profileActions.requestProfile(profile)),
 //   profileUpdate: profile => dispatch(profileActions.updateRequest(profile)), 
 // });
 
-export default connect(mapStateToProps)(Profile);
+export default (Profile);

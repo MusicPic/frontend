@@ -15,17 +15,21 @@ class Dashboard extends React.Component {
     }
   }
   render() {
-    const {
-      profile, profileCreate, pictures, pictureCreate, pictureUpdate, pictureDelete, loggedIn,
-    } = this.props;
-    return (
-      <div className='dashboard'>
+    const JSXloggedIn = <div className='dashboard'>
       <h2> Dashboard </h2>
-      <Profile profile={profile}/>
-      <PictureForm 
-      onComplete={pictureCreate}
+      <Profile profile={this.props.profile}/>
+      </div>;
+    {/* const JSXpicUpload = 
+    <PictureForm 
+      onComplete={this.props.pictureCreate}
       buttonText='Create picture'/>
-      </div>
+      </div>; */}
+    
+    return (
+        <div>
+          { this.props.loggedIn ? JSXloggedIn : null }
+        </div>
+         
     );
   }
 }

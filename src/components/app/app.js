@@ -9,12 +9,6 @@ import Header from '../header/header';
 import * as profileActions from '../../actions/profile-action';
 
 class App extends React.Component {
-  // componentDidMount() {
-  //   if (this.props.loggedIn) {
-  //     this.props.pFetchProfile()
-  //       .catch(console.error);
-  //   }
-  // }
   render() {
     return (
       <div className="app">
