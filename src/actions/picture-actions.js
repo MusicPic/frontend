@@ -28,7 +28,6 @@ const pictureCreateRequest = fileDescriptor => (store) => {
   return superagent.post(`${API_URL}${routes.PICTURE_ROUTE}`)
     .set('Authorization', `Bearer ${token}`)
     .attach('thePicture', fileDescriptor.picture)
-    .attach('theBuffer', fileDescriptor.preview)
     .then((response) => {
       // reponse.body should have properties picture, keyword
       console.log('ABOUT TO DISPACTCH THE PICTURE', response.body);
