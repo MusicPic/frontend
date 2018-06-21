@@ -21,25 +21,20 @@ const deleteProfile = profile => ({
 
 const requestProfile = profile => (store) => {
   const { token } = store.getState('token');
-  console.log('TOKEN', token);
   return superagent.post(`${API_URL}${routes.PROFILE_ROUTE}`)
     .set('Authorization', `Bearer ${token}`)
     .set('Content-Type', 'application/json') 
     .send(profile)
     .then((response) => {
-      console.log('BODY', response.body);
       return store.dispatch(setProfile(response.body));
     });
 };
 
 const fetchRequest = () => (store) => {
   const { token } = store.getState(); 
-  console.log('fetch request called');
-
   return superagent.get(`${API_URL}/profile/me`)
     .set('Authorization', `Bearer ${token}`) 
     .then((response) => {
-      console.log(response);
       return store.dispatch(fetchProfile(response.body));
     });
 };
