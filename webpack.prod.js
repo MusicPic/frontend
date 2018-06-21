@@ -24,7 +24,7 @@ module.exports = merge(commonConfiguration, {
         ],
       },
       {
-        test: /\.(jpg|gif|png)$/,
+        test: /\.(jpg|gif|png|jpeg)$/,
         use: [{
           loader: 'url-loader',
           options: {
@@ -38,7 +38,6 @@ module.exports = merge(commonConfiguration, {
         use: [{
           loader: 'file-loader',
           options: {
-            limit: 10000,
             name: 'assets/[name].[hash].[ext]',
           },
         }],

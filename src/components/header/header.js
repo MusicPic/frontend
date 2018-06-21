@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as authActions from '../../actions/auth-action';
 import Profile from './../profile/profile';
-import logo from '../assets/logo1.png';
+import logo from '../../assets/logo1.png';
 import * as routes from '../../routes';
-import {MDCTopAppBar} from '@material/top-app-bar/index'
+// import AppBar from ‘material-ui/AppBar’;
 
 class Header extends React.Component {
   // constructor(props) {
@@ -19,17 +19,17 @@ class Header extends React.Component {
     const JSXNotLoggedIn = 
     <ul>
       
-      <li><a href={routes.SPOTIFY_ROUTE}>Connect with Spotify</a></li>
+      <li className='spotify'><a  href={routes.SPOTIFY_ROUTE}>Connect with Spotify</a></li>
     </ul>;
     const JSXLoggedIn = 
     <ul>
-      {/* <li><Link to={routes.ROOT_ROUTE}>Home</Link></li> */}
-      {/* <li onClick={() => this.setState({showProfile: true})}>Profile</li>  */}
+      <li><Link to={routes.ROOT_ROUTE}>Home</Link></li>
+      {/* <li onClick={() => this.setState({showProfile: true})}>Profile</li> */}
       <li><Link to={routes.PICTURE_ROUTE}>Upload Picture</Link></li>
     </ul>;
 
     return (
-  <AppBar><header className='header'>
+  <header className='header'>
   <h1><img className='logo' src={logo} alt='logo'/></h1>
   <nav>
     {this.props.loggedIn ? JSXLoggedIn : JSXNotLoggedIn
@@ -39,7 +39,6 @@ class Header extends React.Component {
     <button className='logout' onClick={this.props.doLogout}><a className='logout' href='/'>Logout</a> </button> : undefined}
     
   </header>
-  </AppBar>
     );
   }
 }

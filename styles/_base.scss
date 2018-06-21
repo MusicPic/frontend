@@ -1,17 +1,18 @@
 @import 'vars';
-@import "@material/top-app-bar/mdc-top-app-bar";
+
 
 body {
   // background: $background-color;
   font-family: sans-serif;
   color: $font-color;
-  // background-image: $backgroundimage;
+  // background-image: url("../src/assets/background.jpeg");
 }
 header {
   background-color: rgb(70, 66, 66);
   // height: 100px;
 }
 .logo {
+  border:red solid;
   margin-left: 0;
   top: 0;
   left: 0;
@@ -19,6 +20,13 @@ header {
 .logout {
   top: 0;
   right: 0;
+  border:red solid;
+}
+.spotify{
+  display: block-inline;
+  top: 0;
+  right: 0;
+  border:red solid;
 }
 dashboard {
   // background-image: ;

@@ -7,7 +7,7 @@ import Profile from '../profile/profile';
 import Dashboard from '../dashboard/dashboard';
 import Header from '../header/header';
 import * as profileActions from '../../actions/profile-action';
-import {MDCComponent, MDCFoundation} from '@material/base';
+
 
 class App extends React.Component {
   render() {
