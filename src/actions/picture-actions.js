@@ -29,9 +29,9 @@ const pictureCreateRequest = fileDescriptor => (store) => {
     .set('Authorization', `Bearer ${token}`)
     .attach('thePicture', fileDescriptor.picture)
     .then((response) => {
-      // reponse.body should have properties picture, keyword
-      console.log('ABOUT TO DISPACTCH THE PICTURE', response.body);
-      return store.dispatch(pictureCreate(response.body));
+      // reponse is being sent the response body, should have properties url, keyword
+      console.log('ABOUT TO DISPACTCH THE PICTURE', response);
+      return store.dispatch(pictureCreate(response));
     });
 };
 
