@@ -6,7 +6,6 @@ const { DefinePlugin } = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssPlugin = require('mini-css-extract-plugin');
 
-const production = process.env.NODE_ENV === 'production';
 
 const webpackConfig = module.exports = {};
 
@@ -22,19 +21,16 @@ webpackConfig.plugins = [
   new HtmlWebpackPlugin({
     title: 'Music Pic',
   }),
+  new MiniCssPlugin({
+    filename: '[name].[hash].css',
+  }),
   new DefinePlugin({
     API_URL: JSON.stringify(process.env.API_URL),
   }),
 ];
 
-if (production) {  
-  webpackConfig.plugins.push(new MiniCssPlugin({
-    filename: '[name].[hash].css',
-  }));
-}
 webpackConfig.module = {};
 
-const finalLoader = production ? MiniCssPlugin.loader : 'style-loader';
 
 webpackConfig.module.rules = [
   {
