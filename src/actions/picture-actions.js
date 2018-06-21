@@ -11,7 +11,6 @@ const pictureCreate = picture => ({
   payload: picture,
 });
 
-
 const picturesFetchRequest = () => (dispatch) => {
   return superagent.get(`${API_URL}/api/pictures`)
     .then((response) => {
@@ -19,7 +18,10 @@ const picturesFetchRequest = () => (dispatch) => {
       return response; 
     }); 
 };
-// fileDescriptor is the state obj from picture form, it has these properties-- picture is a jpg, preview is the base64String, url is the url
+
+/* fileDescriptor is the state obj from picture form, 
+it has these properties-- picture is a jpg, preview is the base64String, 
+url is the url */
 const pictureCreateRequest = fileDescriptor => (store) => {
   const { token } = store.getState();
   return superagent.post(`${API_URL}${routes.PICTURE_ROUTE}`)

@@ -15,13 +15,19 @@ class Dashboard extends React.Component {
     }
   }
   render() {
-    const JSXloggedIn = <div className='dashboard'>
+    const JSXloggedIn = 
+    <div className='dashboard'>
       <h2> Dashboard </h2>
       <Profile profile={this.props.profile}/>
       <PictureForm 
       onComplete={this.props.pictureCreate}
-      buttonText='Create picture'/>
-      </div>;
+      />
+      <div>
+        {
+          this.props.picture[0] ? this.props.picture[0] : null
+        }
+      </div>
+    </div>;
    
     
     return (
@@ -39,14 +45,14 @@ Dashboard.propTypes = {
   pictureCreate: PropTypes.func,
   pictureUpdate: PropTypes.func,
   pictureDelete: PropTypes.func,
-  pictures: PropTypes.array,
+  picture: PropTypes.array,
   profile: PropTypes.object,
   loggedIn: PropTypes.bool,
 };
 
 const mapStateToProps = (state) => {
   return {
-    pictures: state.pictures,
+    picture: state.picture,
     profile: state.profile,
     loggedIn: !!state.token,
   };
