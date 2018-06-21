@@ -62,9 +62,8 @@ class Profile extends React.Component {
     //   </div>;
     // }
     return (
-      <div>
-        <p>{this.props.username ? this.props.profile.username : 'Spotify user'}</p>
-        
+      <div className='profile'>
+        <p className='profile-welcome'>Welcome, {this.props.username ? this.props.profile.username : 'username'}</p>
       </div>
     );
   }

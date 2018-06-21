@@ -16,7 +16,6 @@ class Dashboard extends React.Component {
   }
   render() {
     const JSXloggedIn = <div className='dashboard'>
-      <h2> Dashboard </h2>
       <Profile profile={this.props.profile}/>
       <PictureForm 
       onComplete={this.props.pictureCreate}

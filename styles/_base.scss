@@ -8,8 +8,6 @@ html, body{
 }
 body {
   background: $background-color;
-  font-family: $font;
-  color: $font-color;
   height: 90%;
   // background-image: url("https://s3.amazonaws.com/sarasaurus/456e86a06189d602249922324cf7ec41.30688874_2058808840814013_4208000242685050880_n.jpg");
 }
@@ -26,7 +24,12 @@ a:hover {
 .error {
   border: 1px solid $error;
 }
-header, main, footer, article, section, div, p, ul, h1 {
+header, main, footer, article, section, div, p, ul, h1, a {
+  letter-spacing: 2vw;
+  font-weight: lighter;
+  text-transform: uppercase;
+  font-family: $font;
+  color: $font-color;
   position: relative;
   margin: 0;
   padding: 0;
