@@ -32,7 +32,6 @@ const requestProfile = profile => (store) => {
 
 const fetchRequest = () => (store) => {
   const { token } = store.getState(); 
-
   return superagent.get(`${API_URL}/profile/me`)
     .set('Authorization', `Bearer ${token}`) 
     .then((response) => {

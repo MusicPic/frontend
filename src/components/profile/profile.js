@@ -19,52 +19,52 @@ class Profile extends React.Component {
     autoBind.call(this, Profile);
   }
 
-  handleCreate(profile) {
-    this.props.profileCreate(profile)
-      .then(() => {
-        this.props.history.push(routes.DASHBOARD_ROUTE);
-      });
-  }
+  // handleCreate(profile) {
+  //   this.props.profileCreate(profile)
+  //     .then(() => {
+  //       this.props.history.push(routes.DASHBOARD_ROUTE);
+  //     });
+  // }
 
-  handleUpdate(profile) {
-    this.props.profileUpdate(profile);
-    this.setState({ editing: false });
-  }
+  // handleUpdate(profile) {
+  //   this.props.profileUpdate(profile);
+  //   this.setState({ editing: false });
+  // }
   
   render() {
-    const {
-      profile,
-    } = this.props;
+    console.log('profile props', this.props.profile);
+    // const {
+    //   profile,
+    // } = this.props;
 
-    let JSXEditing = null;
-    let JSXDisplay = null;
-    let JSXProfile = null;
+    // let JSXEditing = null;
+    // let JSXDisplay = null;
+    // let JSXProfile = null;
 
-    if (profile) {
-      JSXEditing =
-      <div>
-        <ProfileForm profile={profile} onComplete={this.handleUpdate}/>
-       
-        <button onClick={() => this.setState({ editing: false })}> Cancel</button>
-      </div>;
+    // if (profile) {
+    //   JSXEditing =
+    //   <div>
+    //     {/* <ProfileForm profile={profile} onComplete={this.handleUpdate}/>
+    //     */}
+    //     {/* <button onClick={() => this.setState({ editing: false })}> Cancel</button> */}
+    //   </div>;
 
-      JSXDisplay = 
-      <div>
-        <p>{profile.username}</p>
-        <p>{profile.avatar}</p>
-        <button onClick={() => this.setState({ editing: true })}>Edit</button>
-      </div>;
-      JSXProfile = 
-      <div>
-        <h2>{profile.username}</h2>
-        <h3>{profile.avatar}</h3>
-        {this.state.editing ? JSXEditing : JSXDisplay }
-      </div>;
-    }
+    //   JSXDisplay = 
+    //   <div>
+        
+    //     <button onClick={() => this.setState({ editing: true })}>Edit</button>
+    //   </div>;
+    //   JSXProfile = 
+    //   <div>
+    //     <h2>{profile.username}</h2>
+    //     <h3>{profile.avatar}</h3>
+    //     {this.state.editing ? JSXEditing : JSXDisplay }
+    //   </div>;
+    // }
     return (
       <div>
-        <h1> PROFILE</h1>
-        {profile ? JSXProfile : <ProfileForm onComplete={this.handleCreate}/>}
+        <p>{this.props.username ? this.props.profile.username : 'Spotify user'}</p>
+        
       </div>
     );
   }
@@ -72,18 +72,9 @@ class Profile extends React.Component {
 
 Profile.propTypes = {
   profileFetch: PropTypes.object,
-  profileUpdate: PropTypes.func,
-  profileCreate: PropTypes.func,
+  profile: PropTypes.object,
   history: PropTypes.object, 
 };
 
-const mapStateToProps = state => ({
-  profile: state.clientProfile,
-});
 
-const mapDispatchToProps = dispatch => ({
-  profileCreate: profile => dispatch(profileActions.createRequest(profile)),
-  profileUpdate: profile => dispatch(profileActions.updateRequest(profile)), 
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Profile); 
+export default Profile;
