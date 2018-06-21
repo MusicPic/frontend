@@ -18,12 +18,11 @@ class Dashboard extends React.Component {
     const JSXloggedIn = <div className='dashboard'>
       <h2> Dashboard </h2>
       <Profile profile={this.props.profile}/>
-      </div>;
-    {/* const JSXpicUpload = 
-    <PictureForm 
+      <PictureForm 
       onComplete={this.props.pictureCreate}
       buttonText='Create picture'/>
-      </div>; */}
+      </div>;
+   
     
     return (
         <div>
