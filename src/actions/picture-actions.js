@@ -30,8 +30,8 @@ const pictureCreateRequest = fileDescriptor => (store) => {
     .attach('thePicture', fileDescriptor.picture)
     .then((response) => {
       // reponse is being sent the response body, should have properties url, keyword
-      console.log('ABOUT TO DISPACTCH THE PICTURE', response);
-      return store.dispatch(pictureCreate(response));
+      console.log('ABOUT TO DISPACTCH THE PICTURE', response.body);
+      return store.dispatch(pictureCreate(response.body));
     });
 };
 
