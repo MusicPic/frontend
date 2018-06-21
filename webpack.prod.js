@@ -23,6 +23,26 @@ module.exports = merge(commonConfiguration, {
           'sass-loader',
         ],
       },
+      {
+        test: /\.(jpg|gif|png)$/,
+        use: [{
+          loader: 'url-loader',
+          options: {
+            limit: 10000,
+            name: 'assets/[name].[hash].[ext]',
+          },
+        }],
+      },
+      {
+        test: /\.(jpg|gif|png)$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            limit: 10000,
+            name: 'assets/[name].[hash].[ext]',
+          },
+        }],
+      },   
     ],
   },
 });

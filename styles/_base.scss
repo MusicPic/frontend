@@ -1,8 +1,26 @@
 @import 'vars';
+@import "@material/top-app-bar/mdc-top-app-bar";
 
 body {
-  background: $background-color;
+  // background: $background-color;
   font-family: sans-serif;
   color: $font-color;
+  // background-image: $backgroundimage;
+}
+header {
+  background-color: rgb(70, 66, 66);
+  // height: 100px;
+}
+.logo {
+  margin-left: 0;
+  top: 0;
+  left: 0;
+}
+.logout {
+  top: 0;
+  right: 0;
+}
+dashboard {
+  // background-image: ;
 }
 
