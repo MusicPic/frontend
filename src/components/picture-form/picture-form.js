@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import autoBind from '../../utils/utils';
 
+
 const fileToBase64String = (file) => {
   return new Promise((resolve, reject) => {
     if (!file) {
@@ -21,6 +22,7 @@ class PictureForm extends React.Component {
     this.emptyState = {
       preview: undefined, 
       picture: '', 
+      url: '',
     };
     this.state = this.emptyState;
     autoBind.call(this, PictureForm);
@@ -37,11 +39,14 @@ class PictureForm extends React.Component {
       });
     } else {
       this.setState({
-        description: value,
+        url: value,
       });
     }
   }
-
+  // handleSubmit takes our local ui state and passes it to the oncomplete function which will call our pictureCreate-action
+  // this.state = preview, picture, url
+  // picture should be files[0]
+  
   handleSubmit(event) {
     event.preventDefault();
     this.props.onComplete(this.state);
@@ -58,7 +63,7 @@ class PictureForm extends React.Component {
       <label>Picture</label>
       <input 
         type='file'
-        name='photo'
+        name='picture'
         onChange={this.handleChange}
       />
       <button type='submit'> Upload a Pic | Create a Playlist</button>
@@ -66,9 +71,10 @@ class PictureForm extends React.Component {
     );
   }
 }
-
+// onComplete is passed in by the Dashboard -- it calls the pictureCreateRequest ASYNC action and adds the picture to the store
 PictureForm.propTypes = {
   onComplete: PropTypes.func,
   profile: PropTypes.object,
 };
+
 export default PictureForm;

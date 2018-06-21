@@ -19,14 +19,15 @@ const picturesFetchRequest = () => (dispatch) => {
       return response; 
     }); 
 };
-
+// fileDescriptor is the state obj from picture form, it has these properties-- picture is a jpg, preview is the base64String, url is the url
 const pictureCreateRequest = fileDescriptor => (store) => {
   const { token } = store.getState();
-  const parsedToken = JSON.parse(token);
   return superagent.post(`${API_URL}${routes.PICTURE_ROUTE}`)
-    .set('Authorization', `Bearer ${parsedToken}`)
-    .attach('picture', fileDescriptor.picture)
+    .set('Authorization', `Bearer ${token}`)
+    .attach('thePicture', fileDescriptor.picture)
     .then((response) => {
+      // response has a body property that holds a picture instance from our database
+      console.log('PICTURE CREATE ACTION')
       return store.dispatch(pictureCreate(response.body));
     });
 };
