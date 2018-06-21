@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import autoBind from '../../utils/utils';
-import * as pictureActions from '../../actions/picture-actions';
+
 
 const fileToBase64String = (file) => {
   return new Promise((resolve, reject) => {
@@ -44,14 +43,13 @@ class PictureForm extends React.Component {
       });
     }
   }
-  // here we are passing our local ui state to the oncomplete function which will call our picture-action
-  // this.state = preview and picture
+  // handleSubmit takes our local ui state and passes it to the oncomplete function which will call our pictureCreate-action
+  // this.state = preview, picture, url
   // picture should be files[0]
   
   handleSubmit(event) {
     event.preventDefault();
     this.props.onComplete(this.state);
-    console.log('STATE IN PICTURE FORM', this.state);
     this.setState(this.emptyState);
   }
 
@@ -68,23 +66,15 @@ class PictureForm extends React.Component {
         name='picture'
         onChange={this.handleChange}
       />
-          <input 
-        type='text'
-        name='url'
-        onChange={this.handleChange}
-      />
       <button type='submit'> Upload a Pic | Create a Playlist</button>
       </form>
     );
   }
 }
-// Picture form onComplete passed in in Dashboard
+// onComplete is passed in by the Dashboard -- it calls the pictureCreateRequest ASYNC action and adds the picture to the store
 PictureForm.propTypes = {
   onComplete: PropTypes.func,
   profile: PropTypes.object,
 };
-const mapDispatchToProps = dispatch => ({
-  pictureCreate: picture => dispatch(pictureActions.pictureCreateRequest(picture)),
-});
 
-export default connect(null, mapDispatchToProps)(PictureForm);
+export default PictureForm;
