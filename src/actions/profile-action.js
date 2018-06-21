@@ -19,16 +19,16 @@ const deleteProfile = profile => ({
 });
 
 
-// const requestProfile = profile => (store) => {
-//   const { token } = store.getState('token');
-//   return superagent.post(`${API_URL}${routes.PROFILE_ROUTE}`)
-//     .set('Authorization', `Bearer ${token}`)
-//     .set('Content-Type', 'application/json') 
-//     .send(profile)
-//     .then((response) => {
-//       return store.dispatch(setProfile(response.body));
-//     });
-// };
+const requestProfile = profile => (store) => {
+  const { token } = store.getState('token');
+  return superagent.post(`${API_URL}${routes.PROFILE_ROUTE}`)
+    .set('Authorization', `Bearer ${token}`)
+    .set('Content-Type', 'application/json') 
+    .send(profile)
+    .then((response) => {
+      return store.dispatch(setProfile(response.body));
+    });
+};
 
 const fetchRequest = () => (store) => {
   const { token } = store.getState(); 
@@ -39,16 +39,16 @@ const fetchRequest = () => (store) => {
     });
 };
 
-// const updateProfileRequest = profile => (store) => {
-//   const token = localStorage.getItem('token');
-//   return superagent.put(`${API_URL}${routes.PROFILE_ROUTE}/${profile._id}`)
-//     .set('Authorization', `Bearer ${token}`) 
-//     .set('Content-Type', 'application/json')
-//     .send(profile)
-//     .then((response) => {
-//       return store.dispatch(updateProfile(response.body));
-//     });
-// };
+const updateProfileRequest = profile => (store) => {
+  const token = localStorage.getItem('token');
+  return superagent.put(`${API_URL}${routes.PROFILE_ROUTE}/${profile._id}`)
+    .set('Authorization', `Bearer ${token}`) 
+    .set('Content-Type', 'application/json')
+    .send(profile)
+    .then((response) => {
+      return store.dispatch(updateProfile(response.body));
+    });
+};
 
 const deleteProfileRequest = profile => (store) => {
   const { token } = store.getState();
@@ -60,5 +60,5 @@ const deleteProfileRequest = profile => (store) => {
     });
 };
 
-export { requestProfile, fetchRequest, updateProfileRequest, deleteProfileRequest, fetchProfile };
+export { requestProfile, fetchRequest, updateProfileRequest, deleteProfileRequest, fetchProfile, setProfile, updateProfile, deleteProfile };
 
