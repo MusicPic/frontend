@@ -60,5 +60,5 @@ const deleteProfileRequest = profile => (store) => {
     });
 };
 
-export { requestProfile, fetchRequest, updateProfileRequest, deleteProfileRequest };
+export { requestProfile, fetchRequest, updateProfileRequest, deleteProfileRequest, fetchProfile };
 

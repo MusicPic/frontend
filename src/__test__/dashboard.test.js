@@ -6,10 +6,9 @@ import Dashboard from '../components/dashboard/dashboard';
 
 configureEnzyme({ adapter: new Adapter() });
 
-describe('Dashboard testing', () => {
-  // test('Simple test for initial state', () => {
-  //   const mountedDashboard = enzymeShallowMount(<Dashboard />);
-  //   expect(mountedDashboard.state('notes')).toEqual([]);
+describe('profile testing', () => {
+  test('Simple test for initial state', () => {
+expect(.state('notes')).toEqual([]);
   //   expect(mountedDashboard.state('error')).toEqual(null);
   // });
 //   test('The dashboard should display', () => {
