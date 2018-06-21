@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as authActions from '../../actions/auth-action';
-
+import logo from '../../assets/logo1.png';
 
 import * as routes from '../../routes';
 
@@ -23,7 +23,7 @@ class Header extends React.Component {
 
     return (
   <header className='header'>
-  <h1> MUSIC PIC</h1>
+  <h1><img className='logo' src={ logo } alt='logo'/></h1>
   <nav>
     {this.props.loggedIn ? JSXLoggedIn : JSXNotLoggedIn
     }

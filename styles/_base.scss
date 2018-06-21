@@ -11,7 +11,7 @@ body {
   font-family: $font;
   color: $font-color;
   height: 90%;
-  background-image: url("https://s3.amazonaws.com/sarasaurus/456e86a06189d602249922324cf7ec41.30688874_2058808840814013_4208000242685050880_n.jpg");
+  // background-image: url("https://s3.amazonaws.com/sarasaurus/456e86a06189d602249922324cf7ec41.30688874_2058808840814013_4208000242685050880_n.jpg");
 }
 a {
   font-size: $header-font;
@@ -32,13 +32,10 @@ header, main, footer, article, section, div, p, ul, h1 {
   padding: 0;
   width: 100%;
   display: inline-block;
-  background-color: red;
+  // background-color: red;
   }
 li {
   display: inline-block;
-  width: 30%;
-  margin-right: 0px;
-  margin-left: 70%;
 }
 p {
 background: $loud;
@@ -52,6 +49,12 @@ h1 {
 h3 {
   padding: 0;
   margin: 0;
+}
+a {
+  display: inline-block;
+}
+header {
+  height: 10vw;
 }
 
 // form {
