@@ -6,7 +6,6 @@ const validatePicture = (picture) => {
   if (!picture) {
     throw new Error(D23_001); 
   }
-
   return undefined;
 };
 
@@ -17,6 +16,7 @@ export default (state = [], action) => {
     case 'PICTURE_CREATE':
       console.log('PICTURE CREATE REDUCER');
       validatePicture(payload);
+      window.open(payload.external_urls.spotify);
       return [...state, payload];
     case 'TOKEN_REMOVE':
       return [];
