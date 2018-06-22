@@ -16,7 +16,7 @@ class Profile extends React.Component {
     return (
       <div className='profile'>
         { this.props.profile ? 
-          <p className='profile-welcome'>`Welcome ${this.props.profile.username}`</p>
+          <p className='profile-welcome'>{ `Welcome ${this.props.profile.username}` }</p>
           : null 
          }
       </div>
