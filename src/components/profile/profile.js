@@ -18,52 +18,11 @@ class Profile extends React.Component {
     };
     autoBind.call(this, Profile);
   }
-
-  // handleCreate(profile) {
-  //   this.props.profileCreate(profile)
-  //     .then(() => {
-  //       this.props.history.push(routes.DASHBOARD_ROUTE);
-  //     });
-  // }
-
-  // handleUpdate(profile) {
-  //   this.props.profileUpdate(profile);
-  //   this.setState({ editing: false });
-  // }
   
   render() {
-    console.log('profile props', this.props.profile);
-    // const {
-    //   profile,
-    // } = this.props;
-
-    // let JSXEditing = null;
-    // let JSXDisplay = null;
-    // let JSXProfile = null;
-
-    // if (profile) {
-    //   JSXEditing =
-    //   <div>
-    //     {/* <ProfileForm profile={profile} onComplete={this.handleUpdate}/>
-    //     */}
-    //     {/* <button onClick={() => this.setState({ editing: false })}> Cancel</button> */}
-    //   </div>;
-
-    //   JSXDisplay = 
-    //   <div>
-        
-    //     <button onClick={() => this.setState({ editing: true })}>Edit</button>
-    //   </div>;
-    //   JSXProfile = 
-    //   <div>
-    //     <h2>{profile.username}</h2>
-    //     <h3>{profile.avatar}</h3>
-    //     {this.state.editing ? JSXEditing : JSXDisplay }
-    //   </div>;
-    // }
     return (
       <div>
-        <p>{this.props.username ? this.props.profile.username : 'Spotify user'}</p>
+        <p>{this.props.profile ? this.props.profile.username : 'Spotify user'}</p>
         
       </div>
     );
