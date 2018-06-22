@@ -2,8 +2,9 @@
 @import 'base';
 @import 'dashboard';
 @import 'picture-form';
-
-
+.app {
+  height: 600px;
+  }
 .profile {
   .profile-welcome {
     width: 100%;
@@ -12,8 +13,59 @@
     color: pink;
     background-color: beige;
   }
-  // p {
-  //   color: darkblue;
+}
+header {
+  margin: 0px 0px;
+  width: 100%;
+  height: 10vw;
+  background-color: rgb(0, 0, 0);
+  font-size: $nav-font;
+  z-index: 300;
+  position: fixed;
+  box-shadow:0px 5px 10px rgba(0, 0, 0, 0.336);
+}
 
-  // }
+/*
+styling inner header components
+*/
+
+header {
+
+  img {
+      width: 70%;
+    }
+  h1 {
+    background-color: yellow;
+    width: 20%;
+    float: left;
+  }
+  ul {
+    margin-top: $spacing-sm;
+    width: 50%;
+    background-color: lime;
+    float: right;
+  }
+  li {
+    margin-left: $spacing;
+  }
+  a {
+    font-size: $nav-font;
+    float: right;
+    background-color: teal;
+  }
+  button {
+    background-color: orange;
+    font-size: $button-font;
+    padding: $button-padding;
+    width: 10vw;
+  }
+}
+
+.app-hero {
+  background-image: url('https://sarasaurus.s3.amazonaws.com/52fd3620bcfe97b86988f509c13df018.background.jpeg');
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
 }

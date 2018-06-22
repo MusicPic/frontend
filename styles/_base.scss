@@ -8,7 +8,7 @@ html, body{
 }
 body {
   background: $background-color;
-  height: 90%;
+  height: 100%;
   // background-image: url("https://s3.amazonaws.com/sarasaurus/456e86a06189d602249922324cf7ec41.30688874_2058808840814013_4208000242685050880_n.jpg");
 }
 a {
@@ -49,15 +49,9 @@ h1 {
   font-size: $header-font;
   background-color: yellow;
 }
-h3 {
-  padding: 0;
-  margin: 0;
-}
+
 a {
   display: inline-block;
-}
-header {
-  height: 10vw;
 }
 
 // form {
