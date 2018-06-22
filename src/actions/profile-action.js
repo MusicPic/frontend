@@ -18,7 +18,6 @@ const deleteProfile = profile => ({
   payload: profile,
 });
 
-
 const requestProfile = profile => (store) => {
   const { token } = store.getState('token');
   return superagent.post(`${API_URL}${routes.PROFILE_ROUTE}`)
@@ -60,5 +59,14 @@ const deleteProfileRequest = profile => (store) => {
     });
 };
 
-export { requestProfile, fetchRequest, updateProfileRequest, deleteProfileRequest, fetchProfile, setProfile, updateProfile, deleteProfile };
+export { 
+  requestProfile, 
+  fetchRequest, 
+  updateProfileRequest, 
+  deleteProfileRequest, 
+  fetchProfile, 
+  setProfile, 
+  updateProfile, 
+  deleteProfile,
+};
 

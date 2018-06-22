@@ -26,7 +26,6 @@ class PictureForm extends React.Component {
       pictureUploaded: false,
       error: false,
     };
-    console.log('PICTURE FORM STATE', this.state);
     this.state = this.emptyState;
     autoBind.call(this, PictureForm);
   }
@@ -52,30 +51,31 @@ class PictureForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.onComplete(this.state);
-    // this.setState(this.emptyState);
   }
 
   render() {
     const JSXupload = 
-    <label className='image-input' htmlFor='image_upload'>Upload a Picture </label>;
+      <label className='image-input' htmlFor='image_upload'>Upload a Picture </label>;
+    
     const JSXsubmit =
-    <label className='image-submit' htmlFor='image_submit'> Create a Playlist</label>;
+      <label className='image-submit' htmlFor='image_submit'> Create a Playlist</label>;
+
     return (
-<div className ='picture-container'>
-<form 
-      className='picture-form'
-      onSubmit={this.handleSubmit}
-      >
-     <img className='image-preview' src={this.state.preview}/>
-  <input 
-        type='file'
-        name='picture'
-        id='image_upload'
-        onChange={this.handleChange}
-      />
-  { this.state.pictureUploaded ? JSXsubmit : JSXupload }
-      <button type='submit' id='image_submit'> submit</button>
-      </form>
+      <div className ='picture-container'>
+        <form 
+          className='picture-form'
+          onSubmit={this.handleSubmit}
+        >
+          <img className='image-preview' src={this.state.preview}/>
+          <input 
+            type='file'
+            name='picture'
+            id='image_upload'
+            onChange={this.handleChange}
+          />
+          { this.state.pictureUploaded ? JSXsubmit : JSXupload }
+          <button type='submit' id='image_submit'> submit</button>
+        </form>
       </div>
     );
   }

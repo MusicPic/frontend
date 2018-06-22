@@ -1,6 +1,4 @@
-
 const D23_001 = 'Picture is required';
-
 
 const validatePicture = (picture) => {
   if (!picture) {
@@ -14,7 +12,6 @@ export default (state = [], action) => {
 
   switch (type) {
     case 'PICTURE_CREATE':
-      console.log('PICTURE CREATE REDUCER');
       validatePicture(payload);
       window.open(payload.playlist.external_urls.spotify);
       return [...state, payload];

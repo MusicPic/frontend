@@ -14,7 +14,6 @@ class ProfileForm extends React.Component {
     autoBind.call(this, ProfileForm);
   }
 
-
   handleChange(event) {
     const { name, value } = event.target;
     this.setState({

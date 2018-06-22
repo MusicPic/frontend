@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -24,7 +23,6 @@ class Dashboard extends React.Component {
       />
     </div>;
    
-    
     return (
       <div className ='spotify'>
         { this.props.loggedIn ? JSXloggedIn : null }
@@ -52,6 +50,7 @@ class Dashboard extends React.Component {
     );
   }
 }
+
 Dashboard.propTypes = {
   pFetchProfile: PropTypes.func,
   profileCreate: PropTypes.func,

@@ -4,7 +4,6 @@ import '../../../styles/main.scss';
 import Dashboard from '../dashboard/dashboard';
 import Header from '../header/header';
 
-
 class App extends React.Component {
   render() {
     return (
@@ -21,6 +20,5 @@ class App extends React.Component {
     );
   }
 }
-
 
 export default App;

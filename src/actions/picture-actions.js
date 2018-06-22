@@ -19,7 +19,6 @@ const picturesFetchRequest = () => (dispatch) => {
     }); 
 };
 
-
 const pictureCreateRequest = fileDescriptor => (store) => {
   const { token } = store.getState();
   return superagent.post(`${API_URL}${routes.PICTURE_ROUTE}`)
