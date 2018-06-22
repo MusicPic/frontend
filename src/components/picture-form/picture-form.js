@@ -55,10 +55,10 @@ class PictureForm extends React.Component {
 
   render() {
     const JSXupload = 
-      <label className='image-input' htmlFor='image_upload'>Upload a Picture </label>;
+      <label className='image-input' htmlFor='image_upload'> <p>Upload a Picture</p> </label>;
     
     const JSXsubmit =
-      <label className='image-submit' htmlFor='image_submit'> Create a Playlist</label>;
+      <label className='image-submit' htmlFor='image_submit'><p> Create a Playlist</p></label>;
 
     return (
       <div className ='picture-container'>

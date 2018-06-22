@@ -17,7 +17,7 @@
 header {
   margin: 0px auto;
   width: 100%;
-  height: 4vw;
+  height: 5vw;
   background-color: rgb(88, 105, 118);
   z-index: 300;
   position: fixed;
@@ -31,10 +31,12 @@ styling inner header components
 
 header {
   display: flex;
+  flex-direction: row-reverse;
+  font-weight: thin;
+
   img {
-      height: 60px;
-      width: 60px;
-      float: left;
+      height: 80px;
+      width: 80px;
     }
     // nav {
     //   float: right;
@@ -61,16 +63,20 @@ header {
   a {
     text-align: right;
     font-weight: $nav-weight;
-    text-transform: lowercase;
+    text-transform: uppercase;
     font-size: $nav-font/2;
     // background-color: teal;
   }
   label {
+    text-align: center;
+    border: 1px solid lightgrey;
+    margin: $spacing-sm/4 0px;
     color: white;
-    margin-top: $spacing-sm / 2;
+    padding: $button-padding;
     text-transform: uppercase;
     float: right;
     font-size: $button-font;
+    border-radius: $radius; 
     // background-color: orange;
   }
   button {
@@ -78,26 +84,36 @@ header {
     display: none;
   }
 }
+.logo-box {
+ // outline: 1px solid orange;
+  position: relative;
+  width: 200px;
+  img {
+    clear: both;
+    margin: 0 auto;
+    position: absolute;
+  }
+  h1 {
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    color: white;
+    bottom: $spacing-sm/3;
+    text-align: center;
+    font-size: $button-font;
+    position: absolute;
+    width: 100%;
+  }  
+  em {
+    font-style: normal;
+  }
+}
 .not-loggedin {
   display: block;
   position: relative;
-  // background-color: orange;
-  a{
-    color: white;
-    // margin: $spacing-sm;
-    font-size: $nav-font;
-    font-weight: thin;
-    // background: pink;
-    float: none;
-  }
-  // a:hover {
-  //   // text-decoration: none;
-  //   //color: yellow;
+  // ul {
+  //   text-align: center;
+  //   display: block;
   // }
-  ul {
-    text-align: center;
-    display: block;
-  }
 
 }
 
@@ -110,3 +126,5 @@ header {
   position: absolute;
   box-shadow:0px 5px 10px rgba(0, 0, 0, 0.336);
 }
+
+// position absolute needs a relative parent!!!

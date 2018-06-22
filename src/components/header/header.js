@@ -10,7 +10,8 @@ class Header extends React.Component {
   render() {
     const JSXNotLoggedIn = 
       <div className='not-loggedin'>
-        <a href={routes.SPOTIFY_ROUTE}>Connect with Spotify</a>
+        {/* <img className='logo' src={logo} alt='logo'/> */}
+        <a href={routes.SPOTIFY_ROUTE}><label>Connect with Spotify</label></a>
       </div>;
     
     const JSXLoggedIn = 
@@ -20,17 +21,21 @@ class Header extends React.Component {
           <li><Link to={routes.ROOT_ROUTE}>Home</Link></li>
           <li><Link to={routes.DASHBOARD_ROUTE}>Profile</Link></li>
           <li><Link to={routes.DASHBOARD_ROUTE}>Picture Upload</Link></li>
-          <li>  
+            {/* <img className='logo' src={logo} alt='logo'/> */}
             <label htmlFor ='logout_button'>Logout</label>
             <button className='logout' id='logout_button' onClick={this.props.doLogout}><a className='logout' href='/'>Logout</a> </button>
-          </li>
+        
         </ul>
       </nav>
       </div>;
 
     return (
       <header className='header'>
-        <img className='logo' src={logo} alt='logo'/>
+      <div className='logo-box'>
+      <img className='logo' src={logo} alt='logo'/>
+      {/* <h1>///Music ///<em>Pic</em></h1> */}
+      </div>
+        
           {this.props.loggedIn ? JSXLoggedIn : JSXNotLoggedIn}
       </header>
     );
