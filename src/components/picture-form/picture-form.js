@@ -73,8 +73,8 @@ class PictureForm extends React.Component {
         id='image_upload'
         onChange={this.handleChange}
       />
-      <label className='image-input' htmlFor='image_upload'>Upload a Picture</label>
-      <label className='image-submit' htmlFor='image_submit'>Create a Playlist</label>
+      <label className='image-input' htmlFor='image_upload'>Upload a Picture |</label>
+      <label className='image-submit' htmlFor='image_submit'> Create a Playlist</label>
       <button type='submit' id='image_submit'> Upload a Pic | Create a Playlist</button>
       </form>
       </div>

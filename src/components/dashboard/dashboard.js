@@ -18,7 +18,6 @@ class Dashboard extends React.Component {
     const { picture } = this.props;
     const JSXloggedIn = 
     <div className='dashboard'>
-      <h2> Dashboard </h2>
       <Profile profile={this.props.profile}/>
       <PictureForm 
       onComplete={this.props.pictureCreate}
@@ -33,7 +32,7 @@ class Dashboard extends React.Component {
         {
           picture[0] ? 
             <div className='emotion'>
-              <h1>Your emotion is: { picture[0].emotion }</h1>
+              <h1>Your emotion is: <em>{ picture[0].emotion }</em> </h1>
               <h3> Some songs in your playlist - { picture[0].playlist.name }</h3>
             </div>
           : null
@@ -41,7 +40,7 @@ class Dashboard extends React.Component {
         {
           picture[0] ? picture[0].tracks.slice(0, 10).map((song) => {
             return (
-              <div key={song}> 
+              <div className='song-item' key={song}> 
                 { song }
               </div>
             );

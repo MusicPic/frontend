@@ -9,7 +9,7 @@
   .profile-welcome {
     //position: absolute;
     display: block;
-    text-align: center;
+    text-align: right;
     font-size: $p-font/2;
     color: white;
     // background-color: beige;
@@ -58,6 +58,7 @@ header {
     // background-color: teal;
   }
   label {
+    text-transform: uppercase;
     display:block;
     float: right;
     font-size: $button-font;
@@ -79,7 +80,7 @@ header {
   }
   a:hover {
     // text-decoration: none;
-    color: yellow;
+    //color: yellow;
   }
   ul {
     text-align: center;
@@ -89,7 +90,7 @@ header {
 }
 
 .app-hero {
-  background-image: url('https://sarasaurus.s3.amazonaws.com/52fd3620bcfe97b86988f509c13df018.background.jpeg');
+  // background-image: url('https://sarasaurus.s3.amazonaws.com/52fd3620bcfe97b86988f509c13df018.background.jpeg');
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
