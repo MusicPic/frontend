@@ -14,8 +14,11 @@ class Profile extends React.Component {
   
   render() {    
     return (
-      <div>
-        { this.props.profile ? this.props.profile.username : null }
+      <div className='profile'>
+        { this.props.profile ? 
+          <p className='profile-welcome'>{ `Welcome ${this.props.profile.username}` }</p>
+          : null 
+         }
       </div>
     );
   }

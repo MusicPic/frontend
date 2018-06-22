@@ -1,0 +1,62 @@
+.picture-container {
+  margin-top: 10vw;
+form {
+display: block;
+background: yellow;
+
+label {
+background-color: lime;
+
+}
+#image_upload label {
+background-color: purple;
+}
+#image_submit label {
+background-color: orange;
+}
+img {
+  margin: 0 auto;
+  display: block;
+  background-color: darkolivegreen;
+  height: 500px;
+}
+input {
+// display: none;
+background-color: darkkhaki;
+}
+// this is the submit button
+button {
+  background-color: darkblue;
+}
+}
+}
+
+
+@media screen and (min-width: 600px) {
+.picture-container {
+  margin-top: 10vw;
+form {
+  background-color: orangered;
+label {
+background-color: darkcyan;
+}
+#image_upload label {
+  background-color: darkgreen;
+}
+#image_submit label {
+  background-color: darkgrey;
+}
+img {
+  height: 500px;
+  background-color: darkkhaki;
+}
+input {
+  background-color: darkgoldenrod;
+}
+// this is the submit button
+button {
+  background-color: darkorchid;
+}
+}
+}
+}
