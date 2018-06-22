@@ -22,24 +22,28 @@ class PictureForm extends React.Component {
     this.emptyState = {
       preview: undefined, 
       picture: '', 
-      url: '',
+      pictureUploaded: false,
+      error: false,
     };
+    console.log('PICTURE FORM STATE', this.state);
     this.state = this.emptyState;
     autoBind.call(this, PictureForm);
   }
-  
   handleChange(event) {
-    const { type, value, files } = event.target; 
+    const { type, files } = event.target; 
     if (type === 'file') {
       fileToBase64String(files[0])
-        .then(result => this.setState({ preview: result })); 
+        .then(result => this.setState({ 
+          preview: result,
+          pictureUploaded: true, 
+        })); 
       this.setState({
         picture: files[0],
       }, () => {
       });
     } else {
       this.setState({
-        url: value,
+        error: true,
       });
     }
   }
@@ -50,24 +54,27 @@ class PictureForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.onComplete(this.state);
-    this.setState(this.emptyState);
+    // this.setState(this.emptyState);
   }
 
   render() {
     return (
-      <form 
+<div className ='picture-container'>
+<form 
       className='picture-form'
       onSubmit={this.handleSubmit}
       >
-      <img src={this.state.preview}/>
-      <label>Picture</label>
+      <img className='image-preview' src={this.state.preview}/>
+      {/* <label htmlFor='image_upload'>Upload a Picture</label> */}
       <input 
         type='file'
         name='picture'
+        id='image_upload'
         onChange={this.handleChange}
       />
-      <button type='submit'> Upload a Pic | Create a Playlist</button>
-      </form>
+      <label htmlFor='submit'>Create a Playlist</label>
+      <button type='submit' id='image_submit'> Upload a Pic | Create a Playlist</button>
+      </form></div>
     );
   }
 }

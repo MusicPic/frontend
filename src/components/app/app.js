@@ -12,16 +12,16 @@ import * as profileActions from '../../actions/profile-action';
 class App extends React.Component {
   render() {
     return (
-      <div className="app">
-
-      <BrowserRouter>
-      <div>
+      <div className='app'>
+      
+  <div className='app-hero'>
+  <BrowserRouter>
+      <div className='app-components'>
           <Header />
           <Route exact path='/dashboard' component={ Dashboard }/>
-         
         </div>
-      </BrowserRouter>       
-      </div>
+      </BrowserRouter> </div>      
+  </div>
     );
   }
 }

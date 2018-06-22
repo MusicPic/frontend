@@ -15,6 +15,7 @@ class Dashboard extends React.Component {
     }
   }
   render() {
+    const { picture } = this.props;
     const JSXloggedIn = 
     <div className='dashboard'>
       <h2> Dashboard </h2>
@@ -26,25 +27,28 @@ class Dashboard extends React.Component {
    
     
     return (
+      <div>
+        { this.props.loggedIn ? JSXloggedIn : null }
         <div>
-          { this.props.loggedIn ? JSXloggedIn : null }
-          <div>
-          {
-            this.props.picture[0] ? 
-              <h1>Songs in your randomly generated playlist</h1>
-            : null
-          }
-          {
-            this.props.picture[0] ? this.props.picture[0].tracks.map((song) => {
-              return (
-                <div key={song}> 
-                  { song }
-                </div>
-              );
-            }) : null
-          }
+        {
+          picture[0] ? 
+            <div>
+              <h1>Your emotion is: { picture[0].emotion }</h1>
+              <h3>Some songs in your playlist - { picture[0].playlist.name }</h3>
+            </div>
+          : null
+        }
+        {
+          picture[0] ? picture[0].tracks.slice(0, 10).map((song) => {
+            return (
+              <div key={song}> 
+                { song }
+              </div>
+            );
+          }) : null
+        }
         </div>
-        </div>
+      </div>
          
     );
   }
