@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux'
 import PropTypes from 'prop-types';
 import autoBind from '../../utils/utils';
 
@@ -60,6 +59,10 @@ class PictureForm extends React.Component {
   }
 
   render() {
+    const JSXupload = 
+    <label className='image-input' htmlFor='image_upload'>Upload a Picture </label>;
+    const JSXsubmit =
+    <label className='image-submit' htmlFor='image_submit'> Create a Playlist</label>;
     return (
 <div className ='picture-container'>
 <form 
@@ -73,9 +76,8 @@ class PictureForm extends React.Component {
         id='image_upload'
         onChange={this.handleChange}
       />
-      <label className='image-input' htmlFor='image_upload'>Upload a Picture |</label>
-      <label className='image-submit' htmlFor='image_submit'> Create a Playlist</label>
-      <button type='submit' id='image_submit'> Upload a Pic | Create a Playlist</button>
+  { this.state.pictureUploaded ? JSXsubmit : JSXupload }
+      <button type='submit' id='image_submit'> submit</button>
       </form>
       </div>
     );

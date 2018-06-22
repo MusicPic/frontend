@@ -26,7 +26,7 @@ class Dashboard extends React.Component {
    
     
     return (
-      <div>
+      <div className ='spotify'>
         { this.props.loggedIn ? JSXloggedIn : null }
         <div>
         {

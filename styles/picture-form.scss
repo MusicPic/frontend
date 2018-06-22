@@ -1,19 +1,26 @@
 .picture-container  {
   //background-color:yellowgreen;
-  position:relative;
+ // position: relative;
 
 form {
-  position: absolute;
-  height: 500px;
-  display: flex;
+  // position: absolute;
+  // height: 500px;
+  // display: flex;
   //background-color: orangered;
 
 label {
-  padding: $spacing;
+  background-color: black;
+  z-index: 100;
+  padding: $button-padding;
   display: block;
   float: right;
-  margin: auto;
-  height: 4vw;
+  height: 50px;
+  border: 1px solid;
+  border-radius: 30px;
+  width: 25%;
+  margin: $spacing;
+  text-align: center;
+  font-size: $button-font;
   // background-color: darkcyan;
 }
 }
@@ -23,9 +30,10 @@ label {
 //   flex: auto;
 // }
 img {
+  // position: absolute;
   float: left;
-  min-height: 700px;
-   min-width: 900px;
+  //  min-width: 600px;
+  max-width: 600px;
 }
 input {
   display: none;
@@ -33,8 +41,9 @@ input {
 button {
   display: none;
 }
-.image_submit {
-}
+// .image_submit {
+//   flex: auto;
+// }
 
 .image-input {
 }

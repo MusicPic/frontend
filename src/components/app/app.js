@@ -14,13 +14,13 @@ class App extends React.Component {
     return (
       <div className='app'>
       
-  <div className='app-hero'>
+  <div className='app-hero'> </div>
   <BrowserRouter>
       <div className='app-components'>
           <Header />
           <Route exact path='/dashboard' component={ Dashboard }/>
         </div>
-      </BrowserRouter> </div>      
+      </BrowserRouter>     
   </div>
     );
   }
