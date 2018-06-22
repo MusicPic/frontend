@@ -8,7 +8,7 @@
 .profile {
   .profile-welcome {
     width: 100%;
-    text-align: right;
+    text-align: center;
     font-size: $p-font/2;
     color: pink;
     background-color: beige;
@@ -59,6 +59,22 @@ header {
     padding: $button-padding;
     width: 10vw;
   }
+}
+.not-loggedin {
+  background-color: orange;
+  a{
+    font-weight: bold;
+    background: pink;
+    float: none;
+    width: 100;
+  }
+  ul {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    float: none;
+  }
+
 }
 
 .app-hero {
