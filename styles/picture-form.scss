@@ -3,7 +3,7 @@
  // position: relative;
 
 form {
-  // position: relative;
+  position: relative;
   // width: 90%;
   // margin: 0 auto;
   height: 600px;
@@ -14,6 +14,7 @@ form {
 }
 form {
   label {
+    
     background-color: rgba(88, 105, 118, .8);
     z-index: 300;
     padding: $button-padding;
