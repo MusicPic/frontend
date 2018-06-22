@@ -22,7 +22,7 @@ class Header extends React.Component {
           <li><Link to={routes.DASHBOARD_ROUTE}>Profile</Link></li>
           <li><Link to={routes.DASHBOARD_ROUTE}>Picture Upload</Link></li>
             {/* <img className='logo' src={logo} alt='logo'/> */}
-            <label htmlFor ='logout_button'>Logout from Spotify</label>
+            <label htmlFor ='logout_button'>Logout</label>
             <button className='logout' id='logout_button' onClick={this.props.doLogout}><a className='logout' href='/'>Logout</a> </button>
         
         </ul>
@@ -31,7 +31,11 @@ class Header extends React.Component {
 
     return (
       <header className='header'>
-        <img className='logo' src={logo} alt='logo'/>
+      <div className='logo-box'>
+      <img className='logo' src={logo} alt='logo'/>
+      {/* <h1>///Music ///<em>Pic</em></h1> */}
+      </div>
+        
           {this.props.loggedIn ? JSXLoggedIn : JSXNotLoggedIn}
       </header>
     );

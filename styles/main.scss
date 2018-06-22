@@ -33,10 +33,10 @@ header {
   display: flex;
   flex-direction: row-reverse;
   font-weight: thin;
+
   img {
       height: 80px;
       width: 80px;
-      float: left;
     }
     // nav {
     //   float: right;
@@ -68,17 +68,43 @@ header {
     // background-color: teal;
   }
   label {
-    margin: 0px 0px;
+    text-align: center;
+    border: 1px solid lightgrey;
+    margin: $spacing-sm/4 0px;
     color: white;
-    margin-top: $spacing-sm / 2;
+    padding: $button-padding;
     text-transform: uppercase;
     float: right;
     font-size: $button-font;
+    border-radius: $radius; 
     // background-color: orange;
   }
   button {
     // background-color: orange;
     display: none;
+  }
+}
+.logo-box {
+ // outline: 1px solid orange;
+  position: relative;
+  width: 200px;
+  img {
+    clear: both;
+    margin: 0 auto;
+    position: absolute;
+  }
+  h1 {
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    color: white;
+    bottom: $spacing-sm/3;
+    text-align: center;
+    font-size: $button-font;
+    position: absolute;
+    width: 100%;
+  }  
+  em {
+    font-style: normal;
   }
 }
 .not-loggedin {
