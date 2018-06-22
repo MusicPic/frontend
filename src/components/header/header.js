@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as authActions from '../../actions/auth-action';
 import Profile from './../profile/profile';
-import logo from '../../assets/logo1.png';
+import logo from '../../assets/logo2.png';
 import * as routes from '../../routes';
 // import AppBar from ‘material-ui/AppBar’;
 
@@ -14,13 +14,15 @@ class Header extends React.Component {
     const JSXNotLoggedIn = 
     <ul>
       
-      <li className='spotify'><a  href={routes.SPOTIFY_ROUTE}>Connect with Spotify</a></li>
+      <li className='spotify'><a href={routes.SPOTIFY_ROUTE}>Connect with Spotify</a></li>
     </ul>;
     const JSXLoggedIn = 
     <ul>
-      <li><Link to={routes.ROOT_ROUTE}>Home</Link></li>
-      <li><Link to={routes.ROOT_ROUTE}>Profile</Link></li>
-      <li><Link to={routes.PICTURE_ROUTE}>Upload Picture</Link></li>
+      <li><Link to={routes.ROOT_ROUTE}>H</Link></li>
+      <li><Link to={routes.ROOT_ROUTE}>P</Link></li>
+      <li><Link to={routes.PICTURE_ROUTE}>Pic</Link></li>
+      <li>  
+    <button className='logout' onClick={this.props.doLogout}><a className='logout' href='/'>Logout</a> </button></li>
     </ul>;
 
     return (
@@ -29,9 +31,9 @@ class Header extends React.Component {
   <nav>
     {this.props.loggedIn ? JSXLoggedIn : JSXNotLoggedIn
     }
+  
   </nav>
-    {this.props.loggedIn ? 
-    <button className='logout' onClick={this.props.doLogout}><a className='logout' href='/'>Logout</a> </button> : undefined}
+
     
   </header>
     );

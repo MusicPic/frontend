@@ -1,42 +1,68 @@
+// --------------------------------------------------------------------------------------
+// COLORS
+// --------------------------------------------------------------------------------------
 @import 'vars';
-
-body{
-  font-family: 'Raleway', sans-serif;
-  margin: 0 auto;
+// notice not using underscore or extension sass knows how to find
+html, body{
+  height:100%;
+}
+body {
+  background: $background-color;
+  height: 90%;
+  // background-image: url("https://s3.amazonaws.com/sarasaurus/456e86a06189d602249922324cf7ec41.30688874_2058808840814013_4208000242685050880_n.jpg");
+}
+a {
+  font-size: $header-font;
   color: $font-color;
-  background-image: url('');
-  // background-image: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%,rgba(255,255,255,0.6) 40%), url('https://final-project-301.github.io/client-side/img/leaves_tile.jpg');
-  margin: 0 auto;
+  text-decoration: none;
+  background-color: aqua;
+
+}
+a:hover {
+  text-decoration: underline;
+}
+.error {
+  border: 1px solid $error;
+}
+header, main, footer, article, section, div, p, ul, h1, a {
+  letter-spacing: 2vw;
+  font-weight: lighter;
+  text-transform: uppercase;
+  font-family: $font;
+  color: $font-color;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: inline-block;
+  // background-color: red;
+  }
+li {
+  display: inline-block;
+}
+p {
+background: $loud;
+font-size: $p-font;
 }
 
-header {
-  background-color: rgb(70, 66, 66);
-  margin: 0;
-  // height: 100px;
-}
-.logo {
-  border: red solid;
-  margin-left: 0;
-  top: 0;
-  left: 0;
-  display:inline-block;
-}
-.logout {
-  top: 0;
-  right: 0;
-  border:red solid;
-}
 h1 {
-  width: 5%;
-  height: 5%;
+  font-size: $header-font;
+  background-color: yellow;
 }
-.spotify{
-  
-  top: 0;
-  right: 0;
-  border:red solid;
+h3 {
+  padding: 0;
+  margin: 0;
 }
-dashboard {
-  // background-image: ;
+a {
+  display: inline-block;
 }
+header {
+  height: 10vw;
+}
+
+// form {
+//   width: 44%;
+//   background-color: orange;
+// }
+
 

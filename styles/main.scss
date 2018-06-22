@@ -1,6 +1,19 @@
 @import 'normalize';
 @import 'base';
+@import 'dashboard';
+@import 'picture-form';
 
 
+.profile {
+  .profile-welcome {
+    width: 100%;
+    text-align: right;
+    font-size: $p-font/2;
+    color: pink;
+    background-color: beige;
+  }
+  // p {
+  //   color: darkblue;
 
-
+  // }
+}
