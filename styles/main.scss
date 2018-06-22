@@ -8,8 +8,6 @@
 .profile-welcome {
     //position: absolute;
     padding: $spacing;
-    display: block;
-    text-align: right;
     font-size: $p-font/2;
     color: white;
     width: 90%;
@@ -36,6 +34,7 @@ header {
   img {
       height: 60px;
       width: 60px;
+      float: left;
     }
     // nav {
     //   float: right;
@@ -44,12 +43,12 @@ header {
     // }
   h1 {
     // // background-color: yellow;
-    // width: 20%;
-    // float: left;
+    width: 20%;
+    float: left;
   }
   nav {
-    display: block;
-    position: relative;
+    width: 75%;
+    float: right;
   }
   ul {
     // width: 80%;
@@ -67,11 +66,12 @@ header {
     // background-color: teal;
   }
   label {
+    color: white;
     margin-top: $spacing-sm / 2;
     text-transform: uppercase;
     float: right;
     font-size: $button-font;
-    background-color: orange;
+    // background-color: orange;
   }
   button {
     // background-color: orange;
@@ -83,8 +83,10 @@ header {
   position: relative;
   // background-color: orange;
   a{
-    font-size: $nav-font +2;
-    font-weight: normal;
+    color: white;
+    // margin: $spacing-sm;
+    font-size: $nav-font;
+    font-weight: thin;
     // background: pink;
     float: none;
   }
@@ -100,7 +102,7 @@ header {
 }
 
 .app-hero {
-  // background-image: url('https://sarasaurus.s3.amazonaws.com/52fd3620bcfe97b86988f509c13df018.background.jpeg');
+  //background-image: url('https://sarasaurus.s3.amazonaws.com/52fd3620bcfe97b86988f509c13df018.background.jpeg');
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
