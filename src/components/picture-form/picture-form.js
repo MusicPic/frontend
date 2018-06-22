@@ -1,6 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux'
 import PropTypes from 'prop-types';
 import autoBind from '../../utils/utils';
+
 
 
 const fileToBase64String = (file) => {
@@ -64,19 +66,18 @@ class PictureForm extends React.Component {
       className='picture-form'
       onSubmit={this.handleSubmit}
       >
-      <div className='image-input'>
-      <img className='image-preview' src={this.state.preview}/>
-      {/* <label htmlFor='image_upload'>Upload a Picture</label> */}
-      <input 
+     <img className='image-preview' src={this.state.preview}/>
+  <input 
         type='file'
         name='picture'
         id='image_upload'
         onChange={this.handleChange}
       />
-      </div>
-      <label htmlFor='submit'>Create a Playlist</label>
+      <label className='image-input' htmlFor='image_upload'>Upload a Picture</label>
+      <label className='image-submit' htmlFor='image_submit'>Create a Playlist</label>
       <button type='submit' id='image_submit'> Upload a Pic | Create a Playlist</button>
-      </form></div>
+      </form>
+      </div>
     );
   }
 }

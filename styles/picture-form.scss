@@ -1,29 +1,39 @@
-.picture-container {
+.picture-container  {
   background-color:yellowgreen;
+  position:relative;
+  margin-top: 10%;
+
 form {
-  padding-top: 10%;
+  height: 500px;
   display: flex;
-  flex-direction: row;
   background-color: orangered;
+
 label {
+  display: block;
+  float: right;
+  margin: auto;
   height: 4vw;
-  width: 20rem;
   background-color: darkcyan;
 }
-.image-input {
-  flex: auto;
 }
+
+// .image-input-container div {
+//   margin: auto;
+//   flex: auto;
+// }
 img {
-  height: 500px;
+  float: left;
+   width: 500px;
 }
 input {
-  background-color: darkgoldenrod;
+  display: none;
 }
-// this is the submit button
 button {
-  width: 20rem;
-  height: 4vw;
-  background-color: darkorchid;
+  display: none;
 }
+.image_submit {
+}
+
+.image-input {
 }
 }

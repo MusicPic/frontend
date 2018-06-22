@@ -32,9 +32,9 @@ class Dashboard extends React.Component {
         <div>
         {
           picture[0] ? 
-            <div>
+            <div className='emotion'>
               <h1>Your emotion is: { picture[0].emotion }</h1>
-              <h3>Some songs in your playlist - { picture[0].playlist.name }</h3>
+              <h3> Some songs in your playlist - { picture[0].playlist.name }</h3>
             </div>
           : null
         }
