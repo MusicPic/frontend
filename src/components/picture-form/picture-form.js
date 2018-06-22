@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import autoBind from '../../utils/utils';
 
 
+
 const fileToBase64String = (file) => {
   return new Promise((resolve, reject) => {
     if (!file) {
@@ -55,23 +56,27 @@ class PictureForm extends React.Component {
   }
 
   render() {
+    const JSXupload = 
+    <label className='image-input' htmlFor='image_upload'>Upload a Picture </label>;
+    const JSXsubmit =
+    <label className='image-submit' htmlFor='image_submit'> Create a Playlist</label>;
     return (
 <div className ='picture-container'>
 <form 
       className='picture-form'
       onSubmit={this.handleSubmit}
       >
-      <img className='image-preview' src={this.state.preview}/>
-      {/* <label htmlFor='image_upload'>Upload a Picture</label> */}
-      <input 
+     <img className='image-preview' src={this.state.preview}/>
+  <input 
         type='file'
         name='picture'
         id='image_upload'
         onChange={this.handleChange}
       />
-      <label htmlFor='submit'>Create a Playlist</label>
-      <button type='submit' id='image_submit'> Upload a Pic | Create a Playlist</button>
-      </form></div>
+  { this.state.pictureUploaded ? JSXsubmit : JSXupload }
+      <button type='submit' id='image_submit'> submit</button>
+      </form>
+      </div>
     );
   }
 }

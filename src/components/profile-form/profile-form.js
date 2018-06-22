@@ -29,6 +29,7 @@ class ProfileForm extends React.Component {
 
   render() {
     return (
+      <div className='profile-form'>
       <form
         className='profile-form'
         onSubmit={this.handleSubmit}>
@@ -47,6 +48,7 @@ class ProfileForm extends React.Component {
 
         <button type='submit'> {this.props.profile ? 'update' : 'create'} profile </button>
       </form>
+      </div>
     );
   }
 }
