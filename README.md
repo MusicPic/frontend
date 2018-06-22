@@ -30,7 +30,11 @@ No matter what mood you're in, MusicPic will be there to find the perfect playli
 8. Create Header component to display nav links and spotify login button. On login we display nav links and the logout button but also the dashboard. Otherwise user gets only the login to spotify button.
 9. Dashboard route holds picture upload, profile display and playlist display.
 10. Profile is fetched from the database mongo right after logging in or signing up with Spotify and creating the account.
-11. 
+11. Picture Upload is created in picture-form component. We send the picture uploaded by the user to the bucket on AWS-S3 and then to the Azure that gives us back the keywords describing mood of the face from the picture uploaded by the user. The keywords are used to search on spotify for a dedicated playlist based on the strongest keyword.
+12. Render all the components into HTML.
+13. Style the css files.
+14. Run: run dbon, npm run start, npm run watch to test the app. The address line must be at least 10 characters long.
+15. Write some reducer and action testing.
 
 
 ### Functionality
@@ -38,15 +42,12 @@ No matter what mood you're in, MusicPic will be there to find the perfect playli
   
 
 #### Architecture
-This is the back-end for a front-end that can be cloned here: `https://github.com/MusicPic/frontend.git`
 
-Consult the README in the front-end repo for more information.
-
-
-The backend server is running with Node.js and is built entirely with Javascript. The REST API utilizes Express and we persist data with MongoDB. The server development has been driven by robust unit-testing (see below) and is continously integrated and deployed on Heroku. Several other libraries and dependencies are used - consult the package.json file for a complete list.
+JavaScript, Node.js, Sass, React, Redux, AZURE Face API, Spotify API, Airbnb package, webpack babel, , Redux, Enzyme, Jest, Babel, Superagent, MongoDB, other dependencies
 
 #### Testing
 
-All of the above functionality is tested using the Jest library. 
+All of the above functionality is tested using the Jest library.
+Write some reducer and action testing. 
 
 To run tests: `npm run test`
