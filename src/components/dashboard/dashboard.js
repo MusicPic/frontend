@@ -15,17 +15,35 @@ class Dashboard extends React.Component {
     }
   }
   render() {
-    const JSXloggedIn = <div className='dashboard'>
+    const JSXloggedIn = 
+    <div className='dashboard'>
+      <h2> Dashboard </h2>
       <Profile profile={this.props.profile}/>
       <PictureForm 
       onComplete={this.props.pictureCreate}
-      buttonText='Create picture'/>
-      </div>;
+      />
+    </div>;
    
     
     return (
         <div>
           { this.props.loggedIn ? JSXloggedIn : null }
+          <div>
+          {
+            this.props.picture[0] ? 
+              <h1>Songs in your randomly generated playlist</h1>
+            : null
+          }
+          {
+            this.props.picture[0] ? this.props.picture[0].tracks.map((song) => {
+              return (
+                <div key={song}> 
+                  { song }
+                </div>
+              );
+            }) : null
+          }
+        </div>
         </div>
          
     );
@@ -38,14 +56,14 @@ Dashboard.propTypes = {
   pictureCreate: PropTypes.func,
   pictureUpdate: PropTypes.func,
   pictureDelete: PropTypes.func,
-  pictures: PropTypes.array,
+  picture: PropTypes.array,
   profile: PropTypes.object,
   loggedIn: PropTypes.bool,
 };
 
 const mapStateToProps = (state) => {
   return {
-    pictures: state.pictures,
+    picture: state.picture,
     profile: state.profile,
     loggedIn: !!state.token,
   };
