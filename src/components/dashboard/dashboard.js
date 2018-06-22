@@ -22,17 +22,28 @@ class Dashboard extends React.Component {
       <PictureForm 
       onComplete={this.props.pictureCreate}
       />
-      <div>
-        {
-          this.props.picture[0] ? this.props.picture[0] : null
-        }
-      </div>
     </div>;
    
     
     return (
         <div>
           { this.props.loggedIn ? JSXloggedIn : null }
+          <div>
+          {
+            this.props.picture[0] ? 
+              <h1>Songs in your randomly generated playlist</h1>
+            : null
+          }
+          {
+            this.props.picture[0] ? this.props.picture[0].tracks.map((song) => {
+              return (
+                <div key={song}> 
+                  { song }
+                </div>
+              );
+            }) : null
+          }
+        </div>
         </div>
          
     );

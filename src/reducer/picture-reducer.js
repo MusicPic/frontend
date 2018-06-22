@@ -16,7 +16,7 @@ export default (state = [], action) => {
     case 'PICTURE_CREATE':
       console.log('PICTURE CREATE REDUCER');
       validatePicture(payload);
-      window.open(payload);
+      window.open(payload.external_urls.spotify);
       return [...state, payload];
     case 'TOKEN_REMOVE':
       return [];
