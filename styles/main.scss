@@ -5,15 +5,16 @@
 .app {
   height: 600px;
   }
-.profile {
+
   .profile-welcome {
-    width: 100%;
+    //position: absolute;
+    display: block;
     text-align: center;
     font-size: $p-font/2;
-    color: pink;
-    background-color: beige;
+    color: white;
+    // background-color: beige;
   }
-}
+
 header {
   margin: 0px 0px;
   width: 100%;
@@ -30,57 +31,59 @@ styling inner header components
 */
 
 header {
-
   img {
     margin: $spacing-sm /2;
       width: 30%;
+      float: left;
     }
   h1 {
-    // background-color: yellow;
+    // // background-color: yellow;
     width: 20%;
     float: left;
   }
   ul {
     margin-top: $spacing-sm;
-    width: 50%;
-    background-color: lime;
+    width: 80%;
+    // background-color: lime;
     float: right;
   }
   li {
     margin-left: $spacing;
   }
   a {
+    text-align: right;
     font-weight: $nav-weight;
     text-transform: lowercase;
-    font-size: $nav-font;
+    font-size: $nav-font/2;
+    // background-color: teal;
+  }
+  label {
+    display:block;
     float: right;
-    background-color: teal;
+    font-size: $button-font;
+    width: 10vw;
   }
   button {
-    background-color: orange;
-    font-size: $button-font;
-    padding: $button-padding;
-    width: 10vw;
+    // background-color: orange;
+    display: none;
   }
 }
 .not-loggedin {
-  background-color: orange;
+  // background-color: orange;
   a{
     font-size: $nav-font +2;
     font-weight: normal;
-    background: pink;
+    // background: pink;
     float: none;
     width: 100;
   }
   a:hover {
-    text-decoration: none;
+    // text-decoration: none;
     color: yellow;
   }
   ul {
     text-align: center;
     display: block;
-    margin: 0 auto;
-    float: none;
   }
 
 }

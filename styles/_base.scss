@@ -4,10 +4,11 @@
 @import 'vars';
 // notice not using underscore or extension sass knows how to find
 html, body{
+  width: 100%;
   height:100%;
 }
 body {
-  background: $background-color;
+  // background: $background-color;
   height: 100%;
   // background-image: url("https://s3.amazonaws.com/sarasaurus/456e86a06189d602249922324cf7ec41.30688874_2058808840814013_4208000242685050880_n.jpg");
 }
@@ -15,7 +16,7 @@ a {
   font-size: $header-font;
   color: $font-color;
   text-decoration: none;
-  background-color: aqua;
+  // background-color: aqua;
 
 }
 a:hover {
@@ -47,12 +48,9 @@ font-size: $p-font;
 
 h1 {
   font-size: $header-font;
-  background-color: yellow;
+  // background-color: yellow;
 }
 
-a {
-  display: inline-block;
-}
 
 // form {
 //   width: 44%;

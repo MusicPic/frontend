@@ -1,9 +1,9 @@
 .picture-container  {
   background-color:yellowgreen;
   position:relative;
-  margin-top: 10%;
 
 form {
+  position: absolute;
   height: 500px;
   display: flex;
   background-color: orangered;
@@ -23,7 +23,7 @@ label {
 // }
 img {
   float: left;
-   width: 500px;
+   width: 900px;
 }
 input {
   display: none;

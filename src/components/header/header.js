@@ -19,11 +19,12 @@ class Header extends React.Component {
     </div>;
     const JSXLoggedIn = 
     <ul>
-      <li><Link to={routes.ROOT_ROUTE}>H</Link></li>
-      <li><Link to={routes.ROOT_ROUTE}>P</Link></li>
-      <li><Link to={routes.PICTURE_ROUTE}>Pic</Link></li>
+      <li><Link to={routes.ROOT_ROUTE}>Home</Link></li>
+      <li><Link to={routes.ROOT_ROUTE}>Profile</Link></li>
+      <li><Link to={routes.PICTURE_ROUTE}>Picture Upload</Link></li>
       <li>  
-    <button className='logout' onClick={this.props.doLogout}><a className='logout' href='/'>Logout</a> </button></li>
+        <label htmlFor ='logout_button'>Logout</label>
+    <button className='logout' id='logout_button' onClick={this.props.doLogout}><a className='logout' href='/'>Logout</a> </button></li>
     </ul>;
 
     return (
