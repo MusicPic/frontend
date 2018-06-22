@@ -65,7 +65,7 @@ class PictureForm extends React.Component {
       onSubmit={this.handleSubmit}
       >
       <img className='image-preview' src={this.state.preview}/>
-      <label htmlFor='image_upload'>Upload a Picture</label>
+      {/* <label htmlFor='image_upload'>Upload a Picture</label> */}
       <input 
         type='file'
         name='picture'

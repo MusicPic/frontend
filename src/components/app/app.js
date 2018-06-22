@@ -19,10 +19,9 @@ class App extends React.Component {
       <div className='app-components'>
           <Header />
           <Route exact path='/dashboard' component={ Dashboard }/>
-         
         </div>
       </BrowserRouter> </div>      
-      </div>
+  </div>
     );
   }
 }
