@@ -6,36 +6,30 @@ import * as authActions from '../../actions/auth-action';
 import Profile from './../profile/profile';
 import logo from '../../assets/logo2.png';
 import * as routes from '../../routes';
-// import AppBar from ‘material-ui/AppBar’;
 
-class Header extends React.Component {
-  
+
+class Header extends React.Component { 
   render() {
     const JSXNotLoggedIn = 
-    <ul>
-      
-      <li className='spotify'><a href={routes.SPOTIFY_ROUTE}>Connect with Spotify</a></li>
-    </ul>;
-    const JSXLoggedIn = 
-    <ul>
-      <li><Link to={routes.ROOT_ROUTE}>H</Link></li>
-      <li><Link to={routes.ROOT_ROUTE}>P</Link></li>
-      <li><Link to={routes.PICTURE_ROUTE}>Pic</Link></li>
-      <li>  
-    <button className='logout' onClick={this.props.doLogout}><a className='logout' href='/'>Logout</a> </button></li>
-    </ul>;
+      <ul>
+
+        <li className='spotify'><a href={routes.SPOTIFY_ROUTE}>Connect with Spotify</a></li>
+      </ul>;
+      const JSXLoggedIn = 
+      <ul>
+        <li><Link to={routes.ROOT_ROUTE}>Home</Link></li>
+        <li><Link to={routes.DASHBOARD_ROUTE}>Profile</Link></li>
+        <li><Link to={routes.DASHBOARD_ROUTE}>Upload Picture</Link></li>
+        <button className='logout' onClick={this.props.doLogout}><a className='logout' href='/'>Logout</a> </button></li>
+      </ul>;
 
     return (
-  <header className='header'>
-  <h1><img className='logo' src={logo} alt='logo'/></h1>
-  <nav>
-    {this.props.loggedIn ? JSXLoggedIn : JSXNotLoggedIn
-    }
-  
-  </nav>
-
-    
-  </header>
+      <header className='header'>
+        <h1><img className='logo' src={logo} alt='logo'/></h1>
+        <nav>
+          {this.props.loggedIn ? JSXLoggedIn : JSXNotLoggedIn}
+        </nav>
+      </header>
     );
   }
 }
