@@ -1,6 +1,6 @@
 # MusicPic frontend
 
-![MusicPic-logo](./src/assets/logo3.png)
+![MusicPic-logo](./src/assets/logo2.png)
 
 **```Authors```**```: David Stoll, Joanna Coll, Sarah Bixler, Kris Sakarias ```
 
@@ -36,8 +36,6 @@ No matter what mood you're in, MusicPic will be there to find the perfect playli
 14. Run: run dbon, npm run start, npm run watch to test the app. The address line must be at least 10 characters long.
 15. Write some reducer and action testing.
 
-
-### Functionality
 
   
 
