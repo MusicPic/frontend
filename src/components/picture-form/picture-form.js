@@ -48,9 +48,6 @@ class PictureForm extends React.Component {
       });
     }
   }
-  // handleSubmit takes our local ui state and passes it to the oncomplete function which will call our pictureCreate-action
-  // this.state = preview, picture, url
-  // picture should be files[0]
   
   handleSubmit(event) {
     event.preventDefault();
@@ -83,7 +80,7 @@ class PictureForm extends React.Component {
     );
   }
 }
-// onComplete is passed in by the Dashboard -- it calls the pictureCreateRequest ASYNC action and adds the picture to the store
+
 PictureForm.propTypes = {
   onComplete: PropTypes.func,
   profile: PropTypes.object,
