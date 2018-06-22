@@ -2,7 +2,23 @@
 
 ![MusicPic-logo](./src/assets/logo2.png)
 
-**```Authors```**```: David Stoll, Joanna Coll, Sarah Bixler, Kris Sakarias ```
+**```Authors```**```: ```
+
+David Stoll 
+
+[![linkedin link](https://img.shields.io/badge/link-linkedin-green.svg?longCache=true&style=for-the-badge)](https://www.linkedin.com/in/dstoll243/)
+
+Joanna Coll 
+
+[![linkedin link](https://img.shields.io/badge/link-linkedin-green.svg?longCache=true&style=for-the-badge)](https://www.linkedin.com/in/joanna-coll/)
+
+Sarah Bixler
+
+[![linkedin link](https://img.shields.io/badge/link-linkedin-green.svg?longCache=true&style=for-the-badge)](https://www.linkedin.com/in/sarah-bixler/)
+
+Kris Sakarias 
+
+[![linkedin link](https://img.shields.io/badge/link-linkedin-green.svg?longCache=true&style=for-the-badge)](https://www.linkedin.com/in/kris-sakarias/)
 
 **Version**: 1.0.0
 
@@ -12,7 +28,6 @@ MusicPic helps you find music you may be interested in depending on your mood. A
 
 No matter what mood you're in, MusicPic will be there to find the perfect playlist for you.
 
-##Developer Dependencies
 [![ForTheBadge uses-js](https://ForTheBadge.com/images/badges/uses-js.svg)](https://ForTheBadge.com)
 
 
@@ -36,12 +51,17 @@ No matter what mood you're in, MusicPic will be there to find the perfect playli
 14. Run: run dbon, npm run start, npm run watch to test the app. The address line must be at least 10 characters long.
 15. Write some reducer and action testing.
 
-
   
 
 #### Architecture
 
 JavaScript, Node.js, Sass, React, Redux, AZURE Face API, Spotify API, Airbnb package, webpack babel, , Redux, Enzyme, Jest, Babel, Superagent, MongoDB, other dependencies
+
+All the documentation and drawings you can find under this link:
+
+[![google docs link](https://img.shields.io/badge/link-google_docs-green.svg?longCache=true&style=for-the-badge)](https://docs.google.com/document/d/1tEHkDGlPcnRfyXfNGVHZ0_vqpJFMAu3cgXCS3zMPS9U/edit?usp=sharing)
+
+
 
 #### Testing
 
