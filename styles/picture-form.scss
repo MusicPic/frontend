@@ -1,4 +1,5 @@
 .picture-container {
+  margin-top: 10vw;
 form {
 display: block;
 background: yellow;
@@ -34,6 +35,7 @@ button {
 
 @media screen and (min-width: 600px) {
 .picture-container {
+  margin-top: 20vw;
 form {
   background-color: orangered;
 label {
