@@ -1,6 +1,8 @@
 # MusicPic frontend
 
-**Authors**: David Stoll, Joanna Coll, Sarah Bixler, Kris Sakarias
+![MusicPic-logo](./src/assets/logo3.png)
+
+**```Authors```**```: David Stoll, Joanna Coll, Sarah Bixler, Kris Sakarias ```
 
 **Version**: 1.0.0
 
@@ -10,33 +12,30 @@ MusicPic helps you find music you may be interested in depending on your mood. A
 
 No matter what mood you're in, MusicPic will be there to find the perfect playlist for you.
 
+##Developer Dependencies
+[![ForTheBadge uses-js](https://ForTheBadge.com/images/badges/uses-js.svg)](https://ForTheBadge.com)
+
+
 ## Setup
 
-Starting the Server:
+1. Git clone https://github.com/MusicPic/frontend.git
+2. Install necessary dependencies and create directories.
+3. Start with building webpack.common.js and webpack.dev.js and webpack.prod.js files and utils to pre-define functions bind.
+4. Create .env files both for front-end.
+5. Create store and App Component, also redux-thunk and redux-reporter. 
+6. Create token reducer and auth-actions.js that should contain token actions:
+  * `TOKEN_SET`
+  * `TOKEN_REMOVE`
+7. We are using OAuth, so we are creating a local token in the back-end receiving the token through a cookie. The token allows to keep the user signed in to the Spotify.
+8. Create Header component to display nav links and spotify login button. On login we display nav links and the logout button but also the dashboard. Otherwise user gets only the login to spotify button.
+9. Dashboard route holds picture upload, profile display and playlist display.
+10. Profile is fetched from the database mongo right after logging in or signing up with Spotify and creating the account.
+11. 
 
-```
-git clone https://github.com/MusicPic/backend.git
-
-npm i
-
-mongod
-
-npm run start
-```
 
 ### Functionality
 
-  ```GET /login```
-- This endpoint is only accessible via a link on the front-end to Spotify's authorization system. If authorized, the user's Spotify account information is shared with MusicPic and saved for future use. After logging in, the user can then enjoy the main functionality of the app.
-
-`POST /profile`
-
-`GET /profile/me`
-
-`PUT /profile/:id`
-
-`DELETE /profile`
-
+  
 
 #### Architecture
 This is the back-end for a front-end that can be cloned here: `https://github.com/MusicPic/frontend.git`
