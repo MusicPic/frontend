@@ -8,7 +8,6 @@ import reducers from './reducer/combine-reducers';
 import thunk from './lib/redux-thunk';
 import '../styles/main.scss';
 
-
 const store = createStore(reducers, applyMiddleware(thunk));
 
 const appContainer = document.createElement('div');

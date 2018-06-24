@@ -8,15 +8,14 @@ class App extends React.Component {
   render() {
     return (
       <div className='app'>
-      
-  <div className='app-hero'> </div>
-  <BrowserRouter>
-      <div className='app-components'>
-          <Header />
-          <Route exact path='/dashboard' component={ Dashboard }/>
-        </div>
-      </BrowserRouter>     
-  </div>
+        <div className='app-hero'> </div>
+        <BrowserRouter>
+          <div className='app-components'>
+            <Header/>
+              <Route exact path='/dashboard' component={ Dashboard }/>
+          </div>
+        </BrowserRouter>     
+      </div>
     );
   }
 }
