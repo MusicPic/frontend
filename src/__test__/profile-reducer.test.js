@@ -31,7 +31,6 @@ describe('Profile set', () => {
       type: 'PROFILE_SET',
       payload: profile,
     };
-    // console.log(reducer(state, action));
     expect(reducer(state, action)).toBeInstanceOf(Array);
   });
 });

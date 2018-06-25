@@ -18,7 +18,7 @@ class Profile extends React.Component {
         { this.props.profile ? 
           <p className='profile-welcome'>{ `Welcome ${this.props.profile.username}` }</p>
           : null 
-         }
+        }
       </div>
     );
   }
@@ -29,6 +29,5 @@ Profile.propTypes = {
   profile: PropTypes.object,
   history: PropTypes.object, 
 };
-
 
 export default Profile;

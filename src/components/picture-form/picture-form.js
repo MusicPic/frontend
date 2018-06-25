@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import autoBind from '../../utils/utils';
 
-
-
 const fileToBase64String = (file) => {
   return new Promise((resolve, reject) => {
     if (!file) {
@@ -29,6 +27,7 @@ class PictureForm extends React.Component {
     this.state = this.emptyState;
     autoBind.call(this, PictureForm);
   }
+
   handleChange(event) {
     const { type, files } = event.target; 
     if (type === 'file') {
@@ -55,17 +54,20 @@ class PictureForm extends React.Component {
 
   render() {
     const JSXupload = 
-      <label className='image-input' htmlFor='image_upload'>Upload a Picture </label>;
+      <label className='image-input' htmlFor='image_upload'> 
+        <p>Upload a Picture</p> 
+      </label>;
     
     const JSXsubmit =
-      <label className='image-submit' htmlFor='image_submit'> Create a Playlist</label>;
+      <label className='image-submit' htmlFor='image_submit'>
+        <p>Create a Playlist</p>
+      </label>;
 
     return (
       <div className ='picture-container'>
         <form 
           className='picture-form'
-          onSubmit={this.handleSubmit}
-        >
+          onSubmit={this.handleSubmit}>
           <img className='image-preview' src={this.state.preview}/>
           <input 
             type='file'
@@ -74,7 +76,7 @@ class PictureForm extends React.Component {
             onChange={this.handleChange}
           />
           { this.state.pictureUploaded ? JSXsubmit : JSXupload }
-          <button type='submit' id='image_submit'> submit</button>
+          <button type='submit' id='image_submit'>submit</button>
         </form>
       </div>
     );

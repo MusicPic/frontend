@@ -16,12 +16,12 @@ class Dashboard extends React.Component {
   render() {
     const { picture } = this.props;
     const JSXloggedIn = 
-    <div className='dashboard'>
-      <Profile profile={this.props.profile}/>
-      <PictureForm 
-      onComplete={this.props.pictureCreate}
-      />
-    </div>;
+      <div className='dashboard'>
+        <Profile profile={this.props.profile}/>
+        <PictureForm 
+          onComplete={this.props.pictureCreate}
+        />
+      </div>;
    
     return (
       <div className ='spotify'>
@@ -45,8 +45,7 @@ class Dashboard extends React.Component {
           }) : null
         }
         </div>
-      </div>
-         
+      </div>      
     );
   }
 }
