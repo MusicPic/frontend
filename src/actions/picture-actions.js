@@ -25,6 +25,7 @@ const pictureCreateRequest = fileDescriptor => (store) => {
     .set('Authorization', `Bearer ${token}`)
     .attach('thePicture', fileDescriptor.picture)
     .then((response) => {
+      // console.log('PICTURE CREATE REESPONSE', response.body);
       return store.dispatch(pictureCreate(response.body));
     });
 };
