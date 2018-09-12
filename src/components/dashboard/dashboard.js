@@ -36,10 +36,14 @@ class Dashboard extends React.Component {
           : null
         }
         {
-          picture[0] ? picture[0].tracks.slice(0, 10).map((song) => {
+          picture[0] ? picture[0].tracks.song.map((song) => {
+            console.log(song);
             return (
-              <div className='song-item' key={song}> 
-                { song }
+              <div className='song-item' key={song} > 
+                <img className='album-image' src = { `${song[2]}` } />
+                <h4>
+                  { `'${song[0]}' - ${song[1]}` }
+                </h4>
               </div>
             );
           }) : null
