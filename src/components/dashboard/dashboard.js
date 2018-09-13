@@ -5,7 +5,42 @@ import PictureForm from './../picture-form/picture-form';
 import Profile from './../profile/profile';
 import * as pictureActions from '../../actions/picture-actions';
 import * as profileActions from '../../actions/profile-action';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import IconButton from '@material-ui/core/IconButton';
+import Typography from '@material-ui/core/Typography';
+import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
+import PlayArrowIcon from '@material-ui/icons/PlayArrow';
+import SkipNextIcon from '@material-ui/icons/SkipNext';
+import { withStyles } from '../../../node_modules/@material-ui/core';
 
+const styles = theme => ({
+  card: {
+    display: 'flex',
+  },
+  details: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  content: {
+    flex: '1 0 auto',
+  },
+  cover: {
+    width: 151,
+    height: 151,
+  },
+  controls: {
+    display: 'flex',
+    alignItems: 'center',
+    paddingLeft: theme.spacing.unit,
+    paddingBottom: theme.spacing.unit,
+  },
+  playIcon: {
+    height: 38,
+    width: 38,
+  },
+});
 class Dashboard extends React.Component {
   componentDidMount() {
     console.log('component did mount?', this.props);
@@ -14,7 +49,10 @@ class Dashboard extends React.Component {
         .catch(console.error);
     }
   }
+  
+
   render() {
+    const { classes, theme } = this.props;
     const { picture } = this.props;
     console.log('Picture', picture);
     const JSXloggedIn = 
@@ -26,30 +64,47 @@ class Dashboard extends React.Component {
       </div>;
    
     return (
-      <div className ='spotify'>
+      
+      <Card className ={classes.card}>
         { this.props.loggedIn ? JSXloggedIn : null }
-        <div>
-        {
-          picture[0] ? 
-            <div className='emotion'>
-              <h1>Your emotion is: <em>{ picture[0].emotion }</em> </h1>
-              <h3> Some songs in your playlist - { picture[0].playlist.name }</h3>
-            </div>
-          : null
-        }
+        <div className={classes.details}>
+        <Typography>
+            {
+              picture[0] ? 
+                <div className='emotion'>
+                  <h1>Your emotion is: <em>{ picture[0].emotion }</em> </h1>
+                  <h3> Some songs in your playlist - { picture[0].playlist.name }</h3>
+                </div>
+              : null
+            }
+        </Typography>
+        
         <ul>
         {
           picture[0] ? picture[0].tracks.name.slice(0, 10).map((song) => {
             return (
-              <li className='song-item' key={song}> 
+              <CardContent className={classes.content} key ={ song }>
                 { song }
-              </li>
+                <div className={classes.controls}>
+          <IconButton aria-label="Previous">
+            {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
+          </IconButton>
+          <IconButton aria-label="Play/pause">
+            <PlayArrowIcon className={classes.playIcon} />
+          </IconButton>
+          <IconButton aria-label="Next">
+            {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
+          </IconButton>
+        </div>
+              </CardContent>
             );
           }) : null
         }
         </ul>
+       
+      
         </div>
-      </div>      
+      </Card>      
     );
   }
 }
@@ -82,5 +137,5 @@ const mapDispatchToProps = dispatch => ({
   pictureDelete: picture => dispatch(pictureActions.pictureDeleteRequest(picture)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(Dashboard));
 

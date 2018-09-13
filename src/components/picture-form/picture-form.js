@@ -10,7 +10,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-const styles = theme => ( {
+const styles = theme => ({
   card: {
     display: 'flex',
     flexDirection: 'column',
@@ -87,10 +87,11 @@ class PictureForm extends React.Component {
       </label>;
 
     return (
-      <Card className={classes.className}>
-        <CardActionArea 
+      <Card className={classes.card}>
+        <form
           className='picture-form'
           onSubmit={this.handleSubmit}>
+          <CardActionArea>
           <CardMedia 
           component="img" 
           className="image-preview" 
@@ -105,10 +106,12 @@ class PictureForm extends React.Component {
             onChange={this.handleChange}
           />
           { this.state.pictureUploaded ? JSXsubmit : JSXupload }
-          <Button size="small" color="primary" type='submit' id='image_submit'>Submit
+          <Button size="small" color="primary" type='submit' id='image_submit' className={classes.button}>Submit
           </Button>
+          
           </CardActions>
         </CardActionArea>
+        </form>
       </Card>
     );
   }
@@ -117,6 +120,8 @@ class PictureForm extends React.Component {
 PictureForm.propTypes = {
   onComplete: PropTypes.func,
   profile: PropTypes.object,
+  classes: PropTypes.object.isRequired,
+  // theme: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(PictureForm);
