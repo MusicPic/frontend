@@ -8,6 +8,7 @@ import * as profileActions from '../../actions/profile-action';
 
 class Dashboard extends React.Component {
   componentDidMount() {
+    console.log('component did mount?', this.props);
     if (this.props.loggedIn) {
       this.props.pFetchProfile()
         .catch(console.error);
@@ -15,6 +16,7 @@ class Dashboard extends React.Component {
   }
   render() {
     const { picture } = this.props;
+    console.log('Picture', picture);
     const JSXloggedIn = 
       <div className='dashboard'>
         <Profile profile={this.props.profile}/>
@@ -35,15 +37,17 @@ class Dashboard extends React.Component {
             </div>
           : null
         }
+        <ul>
         {
-          picture[0] ? picture[0].tracks.slice(0, 10).map((song) => {
+          picture[0] ? picture[0].tracks.name.slice(0, 10).map((song) => {
             return (
-              <div className='song-item' key={song}> 
+              <li className='song-item' key={song}> 
                 { song }
-              </div>
+              </li>
             );
           }) : null
         }
+        </ul>
         </div>
       </div>      
     );

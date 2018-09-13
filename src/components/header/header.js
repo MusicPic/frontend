@@ -5,34 +5,52 @@ import { connect } from 'react-redux';
 import * as authActions from '../../actions/auth-action';
 import logo from '../../assets/logo2.png';
 import * as routes from '../../routes';
+import { withStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+// import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 
+
+const styles = {
+  root: {
+    flexGrow: 1,
+  },
+};
 class Header extends React.Component {
   render() {
     const JSXNotLoggedIn = 
       <div className='not-loggedin'>
+        <AppBar position="fixed" color="default">
+        <Toolbar>
         <a href={routes.SPOTIFY_ROUTE}><label>Connect with Spotify</label></a>
+        {/* <div className='logo-box'>
+          <img className='logo' src={logo} alt='logo'/> 
+        </div> */}
+        </Toolbar>
+        </AppBar>
       </div>;
     
     const JSXLoggedIn = 
       <div className='loggedin'>
-        <nav className='nav-bar'>
-          <ul>
-            <li><Link to={routes.ROOT_ROUTE}>Home</Link></li>
-            <li><Link to={routes.DASHBOARD_ROUTE}>Profile</Link></li>
-            <li><Link to={routes.DASHBOARD_ROUTE}>Picture Upload</Link></li>
-            <label htmlFor ='logout_button'>Logout</label>
-            <button className='logout' id='logout_button' onClick={this.props.doLogout}>
+        <AppBar position="static" color="default">
+        <Toolbar>
+          <Button className='home-button'><Link to={routes.ROOT_ROUTE}>Home</Link></Button>
+            <Button className='profile-button'><Link to={routes.DASHBOARD_ROUTE}>Profile</Link></Button>
+            <Button className='picture-button'><Link to={routes.DASHBOARD_ROUTE}>Picture Upload</Link></Button>
+            {/* <label htmlFor ='logout_button'>Logout</label> */}
+            <Button className='logout' id='logout_button' onClick={this.props.doLogout}>
               <a className='logout' href='/'>Logout</a> 
-            </button>
-          </ul>
-        </nav>
+            </Button>
+            {/* <div className='logo-box'>
+          <img className='logo' src={logo} alt='logo'/> 
+        </div> */}
+        </Toolbar>
+        </AppBar>  
       </div>;
 
     return (
       <header className='header'>
-        <div className='logo-box'>
-          <img className='logo' src={logo} alt='logo'/> 
-        </div>
         {this.props.loggedIn ? JSXLoggedIn : JSXNotLoggedIn}
       </header>
     );
@@ -51,4 +69,4 @@ const mapDispatchToProps = dispatch => ({
   doLogout: () => dispatch(authActions.logout()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(Header));

@@ -1,52 +1,52 @@
-@import 'vars';
+// @import 'vars';
 
-html, body{
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  clear: both;
-}
+// html, body{
+//   width: 100%;
+//   height: 100%;
+//   background-color: black;
+//   clear: both;
+// }
 
-body {
-  height: 100%;
-  margin: 0 auto;
-}
+// body {
+//   height: 100%;
+//   margin: 0 auto;
+// }
 
-a {
-  font-size: $header-font;
-  color: $font-color;
-  text-decoration: none;
-}
+// a {
+//   font-size: $header-font;
+//   color: $font-color;
+//   text-decoration: none;
+// }
 
-a:hover {
-  text-decoration: underline;
-}
+// a:hover {
+//   text-decoration: underline;
+// }
 
-.error {
-  border: 1px solid $error;
-}
+// .error {
+//   border: 1px solid $error;
+// }
 
-header, main, footer, article, section, div, p, ul, h1, a {
-  letter-spacing: .4vw;
-  font-weight: lighter;
-  font-family: $font;
-  color: $font-color;
-  position: relative;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  display: inline-block;
-}
+// header, main, footer, article, section, div, p, ul, h1, a {
+//   letter-spacing: .4vw;
+//   font-weight: lighter;
+//   font-family: $font;
+//   color: $font-color;
+//   position: relative;
+//   margin: 0;
+//   padding: 0;
+//   width: 100%;
+//   display: inline-block;
+// }
 
-li {
-  text-transform: uppercase;
-  display: inline-block;
-}
+// li {
+//   text-transform: uppercase;
+//   display: inline-block;
+// }
 
-p {
-font-size: $p-font;
-}
+// p {
+// font-size: $p-font;
+// }
 
-h1 {
-  font-size: $header-font;
-}
+// h1 {
+//   font-size: $header-font;
+// }

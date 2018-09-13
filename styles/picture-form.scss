@@ -1,43 +1,43 @@
-.picture-container  {
-  form {
-    position: relative;
-    height: 600px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+// .picture-container  {
+//   form {
+//     position: relative;
+//     height: 600px;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//   }
 
-  form {
-    label {
-      background-color: rgba(61, 215, 168, 0.8);
-      z-index: 300;
-      padding: $button-padding;
-      display: block;
-      height: 50px;
-      border-radius: 40px;
-      box-shadow: 10px 10px 10px rgba(00, 00, 00, .5);
-      width: 25%;
-      position: absolute;
+//   form {
+//     label {
+//       background-color: rgba(61, 215, 168, 0.8);
+//       z-index: 300;
+//       padding: $button-padding;
+//       display: block;
+//       height: 50px;
+//       border-radius: 40px;
+//       box-shadow: 10px 10px 10px rgba(00, 00, 00, .5);
+//       width: 25%;
+//       position: absolute;
 
-      p {
-        color: white;
-        font-weight: thin;
-        top: 20%;
-        font-size: $button-font;
-      }
-    }
+//       p {
+//         color: white;
+//         font-weight: thin;
+//         top: 20%;
+//         font-size: $button-font;
+//       }
+//     }
 
-    img {
-      max-width: 500px;
-      position: absolute;
-    }
+//     img {
+//       max-width: 500px;
+//       position: absolute;
+//     }
 
-    input {
-      display: none;
-    }
+//     input {
+//       display: none;
+//     }
 
-    button {
-      display: none;
-    }
-  }
-}
+//     button {
+//       display: none;
+//     }
+//   }
+// }
