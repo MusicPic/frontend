@@ -1,6 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import autoBind from '../../utils/utils';
+import { withStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+
+const styles = theme => ( {
+  card: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+
+  },
+  media: {
+    // ⚠️ object-fit is not supported by IE11.
+    objectFit: 'contain',
+  },
+});
 
 const fileToBase64String = (file) => {
   return new Promise((resolve, reject) => {
@@ -53,6 +74,8 @@ class PictureForm extends React.Component {
   }
 
   render() {
+    const { classes } = this.props;
+
     const JSXupload = 
       <label className='image-input' htmlFor='image_upload'> 
         <p>Upload a Picture</p> 
@@ -64,11 +87,17 @@ class PictureForm extends React.Component {
       </label>;
 
     return (
-      <div className ='picture-container'>
-        <form 
+      <Card className={classes.className}>
+        <CardActionArea 
           className='picture-form'
           onSubmit={this.handleSubmit}>
-          <img className='image-preview' src={this.state.preview}/>
+          <CardMedia 
+          component="img" 
+          className="image-preview" 
+          height="500"
+          image={this.state.preview}
+          title="Uploaded Image"/>
+          <CardActions>
           <input 
             type='file'
             name='picture'
@@ -76,9 +105,11 @@ class PictureForm extends React.Component {
             onChange={this.handleChange}
           />
           { this.state.pictureUploaded ? JSXsubmit : JSXupload }
-          <button type='submit' id='image_submit'>submit</button>
-        </form>
-      </div>
+          <Button size="small" color="primary" type='submit' id='image_submit'>Submit
+          </Button>
+          </CardActions>
+        </CardActionArea>
+      </Card>
     );
   }
 }
@@ -88,4 +119,4 @@ PictureForm.propTypes = {
   profile: PropTypes.object,
 };
 
-export default PictureForm;
+export default withStyles(styles)(PictureForm);

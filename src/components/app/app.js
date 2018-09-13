@@ -3,11 +3,19 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import '../../../styles/main.scss';
 import Dashboard from '../dashboard/dashboard';
 import Header from '../header/header';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles'; // I dont think this is actually necessary
+
+const theme = createMuiTheme({
+
+});
 
 class App extends React.Component {
   render() {
     return (
-      <div className='app'>
+      <MuiThemeProvider theme={theme}>
+         <div className='app'>
+         <CssBaseline />
         <div className='app-hero'> </div>
         <BrowserRouter>
           <div className='app-components'>
@@ -16,6 +24,8 @@ class App extends React.Component {
           </div>
         </BrowserRouter>     
       </div>
+      </MuiThemeProvider>
+   
     );
   }
 }
