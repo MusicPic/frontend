@@ -14,8 +14,12 @@ import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import SkipNextIcon from '@material-ui/icons/SkipNext';
 import { withStyles } from '../../../node_modules/@material-ui/core';
+import Paper from '@material-ui/core/Paper';
 
 const styles = theme => ({
+  paper: {
+    display: 'block',
+  },
   card: {
     display: 'flex',
   },
@@ -65,7 +69,7 @@ class Dashboard extends React.Component {
    
     return (
       
-      <Card className ={classes.card}>
+      <Paper className ={classes.paper}>
         { this.props.loggedIn ? JSXloggedIn : null }
         <div className={classes.details}>
         <Typography>
@@ -79,13 +83,13 @@ class Dashboard extends React.Component {
             }
         </Typography>
         
-        <ul>
         {
           picture[0] ? picture[0].tracks.name.slice(0, 10).map((song) => {
             return (
-              <CardContent className={classes.content} key ={ song }>
+              <Card className={classes.card} key={ song }>
+                <CardContent className={classes.content}>
                 { song }
-                <div className={classes.controls}>
+                {/* <div className={classes.controls}>
           <IconButton aria-label="Previous">
             {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
           </IconButton>
@@ -95,16 +99,16 @@ class Dashboard extends React.Component {
           <IconButton aria-label="Next">
             {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
           </IconButton>
-        </div>
+        </div> */}
               </CardContent>
+              </Card>
+            
             );
           }) : null
         }
-        </ul>
-       
       
         </div>
-      </Card>      
+      </Paper>      
     );
   }
 }
@@ -119,6 +123,8 @@ Dashboard.propTypes = {
   picture: PropTypes.array,
   profile: PropTypes.object,
   loggedIn: PropTypes.bool,
+  classes: PropTypes.object.isRequired,
+
 };
 
 const mapStateToProps = (state) => {
