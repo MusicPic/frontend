@@ -9,15 +9,27 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Paper from '@material-ui/core/Paper';
 
 const styles = theme => ({
+  paper: {
+    display: 'block',
+    justifyContent: 'center',
+  },
+  form: {
+    display: 'block',
+  },
   card: {
+    justifyContent: 'center',
+    width: '600',
     display: 'flex',
-    flexDirection: 'column',
+    flexDirection: 'row',
     alignItems: 'center',
 
   },
   media: {
+    width: '500',
+    height: '500',
     // ⚠️ object-fit is not supported by IE11.
     objectFit: 'contain',
   },
@@ -87,6 +99,7 @@ class PictureForm extends React.Component {
       </label>;
 
     return (
+      <Paper className={classes.paper}>
       <Card className={classes.card}>
         <form
           className='picture-form'
@@ -94,7 +107,7 @@ class PictureForm extends React.Component {
           <CardActionArea>
           <CardMedia 
           component="img" 
-          className="image-preview" 
+          className={classes.media} 
           height="500"
           image={this.state.preview}
           title="Uploaded Image"/>
@@ -113,6 +126,8 @@ class PictureForm extends React.Component {
         </CardActionArea>
         </form>
       </Card>
+      </Paper>
+      
     );
   }
 }
