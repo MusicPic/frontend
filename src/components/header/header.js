@@ -36,7 +36,7 @@ class Header extends React.Component {
         <AppBar position="static" color="default">
         <Toolbar>
           <Button className='home-button'><Link to={routes.ROOT_ROUTE}>Home</Link></Button>
-            <Button className='profile-button'><Link to={routes.DASHBOARD_ROUTE}>Profile</Link></Button>
+            <Button className='profile-button'><Link to={routes.PROFILE_ROUTE}>Profile</Link></Button>
             <Button className='picture-button'><Link to={routes.DASHBOARD_ROUTE}>Picture Upload</Link></Button>
             {/* <label htmlFor ='logout_button'>Logout</label> */}
             <Button className='logout' id='logout_button' onClick={this.props.doLogout}>

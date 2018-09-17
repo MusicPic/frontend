@@ -16,12 +16,13 @@ const styles = theme => ({
     display: 'block',
     justifyContent: 'center',
   },
-  form: {
-    display: 'block',
-  },
+  // form: {
+  //   display: 'block',
+  // },
   card: {
     justifyContent: 'center',
     width: '600',
+    height: '600',
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',

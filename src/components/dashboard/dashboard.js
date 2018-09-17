@@ -84,6 +84,7 @@ class Dashboard extends React.Component {
         </Typography>
         
         {
+          
           picture[0] ? picture[0].tracks.name.slice(0, 10).map((song) => {
             return (
               <Card className={classes.card} key={ song }>

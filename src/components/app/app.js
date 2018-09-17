@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import '../../../styles/main.scss';
 import Dashboard from '../dashboard/dashboard';
+import ProfileForm from '../profile-form/profile-form';
 import Header from '../header/header';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles'; // I dont think this is actually necessary
@@ -21,6 +22,7 @@ class App extends React.Component {
           <div className='app-components'>
             <Header/>
               <Route exact path='/dashboard' component={ Dashboard }/>
+              <Route exact path='/profile' component={ ProfileForm } />
           </div>
         </BrowserRouter>     
       </div>
